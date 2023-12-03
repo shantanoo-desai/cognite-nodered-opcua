@@ -1,0 +1,11 @@
+services:
+  telegraf:
+    image: telegraf:1.27.2-alpine
+    container_name: celanese-telegraf
+    restart: always
+    depends_on:
+      nodered:
+        condition: service_healthy
+        restart: true
+    volumes:
+      - ../telegraf/telegraf.toml:/etc/telegraf/telegraf.conf:ro

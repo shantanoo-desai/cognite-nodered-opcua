@@ -1,0 +1,11 @@
+services:
+  cognite:
+    image: cognite/opcua-extractor-net:2.22.1
+    container_name: celanese-cdf
+    restart: always
+    depends_on:
+      nodered:
+        condition: service_healthy
+        restart: true
+    volumes:
+      - ../cognite:/config
