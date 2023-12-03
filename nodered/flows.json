@@ -1,0 +1,446 @@
+[
+    {
+        "id": "2547d6372427663a",
+        "type": "tab",
+        "label": "SEL735 Modbus 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "eef4b67f13c4159e",
+        "type": "tab",
+        "label": "M1 OPC UA Data",
+        "disabled": false,
+        "info": "",
+        "env": [
+            {
+                "name": "Client_Status",
+                "value": "off",
+                "type": "str"
+            }
+        ]
+    },
+    {
+        "id": "7a372186163a7730",
+        "type": "tab",
+        "label": "OPC UA Model",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2ba5f7631b45cb1a",
+        "type": "OPCUA-IIoT-Connector",
+        "discoveryUrl": "",
+        "endpoint": "opc.tcp://localhost:4840/",
+        "endpointMustExist": false,
+        "keepSessionAlive": true,
+        "loginEnabled": false,
+        "name": "Building OPC Srv",
+        "showErrors": true,
+        "securityPolicy": "None",
+        "securityMode": "None",
+        "individualCerts": false,
+        "publicCertificateFile": "",
+        "privateKeyFile": "",
+        "defaultSecureTokenLifetime": "",
+        "autoSelectRightEndpoint": false,
+        "strategyMaxRetry": "",
+        "strategyInitialDelay": "",
+        "strategyMaxDelay": "",
+        "strategyRandomisationFactor": "",
+        "requestedSessionTimeout": "",
+        "connectionStartDelay": "",
+        "reconnectDelay": "",
+        "maxBadSessionRequests": "1000"
+    },
+    {
+        "id": "0c5e90d41c512c16",
+        "type": "debug",
+        "z": "2547d6372427663a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 630,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e54a636f40d79a97",
+        "type": "inject",
+        "z": "2547d6372427663a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "8",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "840dafaa5d6dd333"
+            ]
+        ]
+    },
+    {
+        "id": "f12ad22d5977734c",
+        "type": "link out",
+        "z": "2547d6372427663a",
+        "name": "PF Simulated",
+        "mode": "link",
+        "links": [
+            "65f8169472b6a9a2",
+            "e5626d8342445f82",
+            "acdc4b3a7b0c0519",
+            "bf3ffdffb146905f"
+        ],
+        "x": 820,
+        "y": 200,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "840dafaa5d6dd333",
+        "type": "random",
+        "z": "2547d6372427663a",
+        "name": "Power Factor",
+        "low": "0.88",
+        "high": "0.9",
+        "inte": "false",
+        "property": "payload",
+        "x": 330,
+        "y": 240,
+        "wires": [
+            [
+                "0c5e90d41c512c16",
+                "f12ad22d5977734c"
+            ]
+        ]
+    },
+    {
+        "id": "bf933e504011e98e",
+        "type": "comment",
+        "z": "eef4b67f13c4159e",
+        "name": "Simulated PF",
+        "info": "",
+        "x": 150,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "bf3ffdffb146905f",
+        "type": "link in",
+        "z": "eef4b67f13c4159e",
+        "name": "Sim PF In",
+        "links": [
+            "f12ad22d5977734c"
+        ],
+        "x": 240,
+        "y": 80,
+        "wires": [
+            [
+                "b560ce69b183b4d3"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "c4136c8817a32deb",
+        "type": "debug",
+        "z": "eef4b67f13c4159e",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c18e281c6c91cc09",
+        "type": "OPCUA-IIoT-Write",
+        "z": "eef4b67f13c4159e",
+        "connector": "2ba5f7631b45cb1a",
+        "name": "SimPF",
+        "justValue": false,
+        "showStatusActivities": true,
+        "showErrors": true,
+        "x": 630,
+        "y": 80,
+        "wires": [
+            [
+                "460c2fc5103015e3"
+            ]
+        ]
+    },
+    {
+        "id": "460c2fc5103015e3",
+        "type": "OPCUA-IIoT-Response",
+        "z": "eef4b67f13c4159e",
+        "name": "SimPF",
+        "compressStructure": false,
+        "showStatusActivities": true,
+        "showErrors": true,
+        "activateUnsetFilter": false,
+        "activateFilters": false,
+        "negateFilter": false,
+        "filters": [],
+        "x": 850,
+        "y": 80,
+        "wires": [
+            [
+                "c4136c8817a32deb"
+            ]
+        ]
+    },
+    {
+        "id": "b560ce69b183b4d3",
+        "type": "OPCUA-IIoT-Node",
+        "z": "eef4b67f13c4159e",
+        "injectType": "write",
+        "nodeId": "ns=1;s=SimPF2",
+        "datatype": "Float",
+        "value": "",
+        "name": "SimPF",
+        "topic": "",
+        "showErrors": true,
+        "x": 450,
+        "y": 80,
+        "wires": [
+            [
+                "c18e281c6c91cc09"
+            ]
+        ]
+    },
+    {
+        "id": "d5daa77ee562ee76",
+        "type": "comment",
+        "z": "7a372186163a7730",
+        "name": "OPC UA Data Model",
+        "info": "OPC-UA Data Model Setup",
+        "x": 110,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "c25d18789a60fe39",
+        "type": "function",
+        "z": "7a372186163a7730",
+        "name": "PassThru1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 80,
+        "wires": [
+            [
+                "a2e15ecbf75a2192"
+            ]
+        ]
+    },
+    {
+        "id": "238d5d9d1ac6d630",
+        "type": "debug",
+        "z": "7a372186163a7730",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1250,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "85f945fc299349fb",
+        "type": "function",
+        "z": "7a372186163a7730",
+        "name": "PassThru2",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 840,
+        "wires": [
+            [
+                "a2e15ecbf75a2192"
+            ]
+        ]
+    },
+    {
+        "id": "a2e15ecbf75a2192",
+        "type": "function",
+        "z": "7a372186163a7730",
+        "name": "PassThru",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 480,
+        "wires": [
+            [
+                "55732db5711a8783"
+            ]
+        ]
+    },
+    {
+        "id": "efe0638543fcfbf3",
+        "type": "OPCUA-IIoT-Inject",
+        "z": "7a372186163a7730",
+        "injectType": "inject",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "startDelay": "",
+        "name": "",
+        "addressSpaceItems": [],
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "6eafc511e877d33b"
+            ]
+        ]
+    },
+    {
+        "id": "86e061e9f0a93b04",
+        "type": "OPCUA-IIoT-Inject",
+        "z": "7a372186163a7730",
+        "injectType": "inject",
+        "payload": "0.0",
+        "payloadType": "num",
+        "topic": "",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "startDelay": "15",
+        "name": "",
+        "addressSpaceItems": [],
+        "x": 110,
+        "y": 840,
+        "wires": [
+            [
+                "63712b91131579b5"
+            ]
+        ]
+    },
+    {
+        "id": "55732db5711a8783",
+        "type": "OPCUA-IIoT-Server",
+        "z": "7a372186163a7730",
+        "port": "4840",
+        "endpoint": "",
+        "acceptExternalCommands": true,
+        "maxAllowedSessionNumber": "",
+        "maxConnectionsPerEndpoint": "",
+        "maxAllowedSubscriptionNumber": "",
+        "alternateHostname": "",
+        "name": "Building OPC Srv",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "asoDemo": false,
+        "allowAnonymous": true,
+        "individualCerts": false,
+        "isAuditing": false,
+        "serverDiscovery": false,
+        "users": [],
+        "xmlsets": [],
+        "publicCertificateFile": "",
+        "privateCertificateFile": "",
+        "registerServerMethod": "1",
+        "discoveryServerEndpointUrl": "",
+        "capabilitiesForMDNS": "",
+        "maxNodesPerRead": 1000,
+        "maxNodesPerBrowse": 2000,
+        "delayToClose": 1000,
+        "x": 1070,
+        "y": 480,
+        "wires": [
+            [
+                "238d5d9d1ac6d630"
+            ]
+        ]
+    },
+    {
+        "id": "6eafc511e877d33b",
+        "type": "OPCUA-IIoT-Server-ASO",
+        "z": "7a372186163a7730",
+        "nodeId": "ns=1;s=CLK_SUB_25",
+        "browsename": "CLK SUB 25",
+        "displayname": "CLK SUB 25",
+        "objecttype": "FolderType",
+        "datatype": "",
+        "value": "",
+        "referenceNodeId": "ns=0;i=85",
+        "referencetype": "Organizes",
+        "name": "Folder",
+        "x": 350,
+        "y": 80,
+        "wires": [
+            [
+                "c25d18789a60fe39"
+            ]
+        ]
+    },
+    {
+        "id": "63712b91131579b5",
+        "type": "OPCUA-IIoT-Server-ASO",
+        "z": "7a372186163a7730",
+        "nodeId": "ns=1;s=SimPF2",
+        "browsename": "Simulated PF",
+        "displayname": "MET0025 Simulated PF",
+        "objecttype": "BaseDataVariableType",
+        "datatype": "Float",
+        "value": "",
+        "referenceNodeId": "ns=1;s=CLK_SUB_25",
+        "referencetype": "Organizes",
+        "name": "Sim PF",
+        "x": 380,
+        "y": 840,
+        "wires": [
+            [
+                "85f945fc299349fb"
+            ]
+        ]
+    }
+]
