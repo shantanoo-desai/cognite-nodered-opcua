@@ -1,2 +1,3 @@
 nodered/data
 cognite/.env
+cognite/logs/*.log
