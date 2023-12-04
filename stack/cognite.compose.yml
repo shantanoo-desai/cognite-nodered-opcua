@@ -2,6 +2,8 @@ services:
   cognite:
     image: cognite/opcua-extractor-net:2.22.1
     container_name: celanese-cdf
+    env_file:
+      - ../cognite/.env
     restart: always
     depends_on:
       nodered:
