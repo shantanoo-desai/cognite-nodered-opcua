@@ -7,7 +7,7 @@ source:
   # password: 
 
 
-dry-run: true # set to false when you want to publish data to CDF Cloud instance
+dry-run: false # set to false when you want to publish data to CDF Cloud instance
 
 
 logger:
@@ -38,7 +38,7 @@ cognite:
 
     # If this is set to true, credentials can be left out, and the extractor
     # will read data without pushing it to CDF.
-    debug: true
+    debug: false
 
     # This is for microsoft as IdP, to use a different provider,
     # set implementation: Basic, and use token-url instead of tenant.
@@ -74,8 +74,7 @@ extraction:
         #password: edgestack
         #database: data
 
-          #subscriptions:
-          #data-points: true
+subscriptions:
+    data-points: true
 failure-buffer:
     enabled: true
-    influx: false
