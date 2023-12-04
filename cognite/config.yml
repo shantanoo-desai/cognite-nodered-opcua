@@ -1,7 +1,7 @@
 version: 1
 
 source:
-  endpoint-url: 'opc.tcp://celanese-nodered:4840/'
+  endpoint-url: 'opc.tcp://cognite-nodered:4840/'
   keep-alive-interval: 10000
   # username: 
   # password: 
@@ -68,13 +68,6 @@ extraction:
         # to data pushed to Raw.
         append-internal-values: true
 
-        #influx:
-        #host: 'http://emerson-influxdb:8086'
-        #username: service
-        #password: edgestack
-        #database: data
 
-subscriptions:
-    data-points: true
 failure-buffer:
     enabled: true

@@ -1,7 +1,7 @@
 services:
   cognite:
     image: cognite/opcua-extractor-net:2.22.1
-    container_name: celanese-cdf
+    container_name: cognite-cdf
     env_file:
       - ../cognite/.env
     restart: always
@@ -11,3 +11,5 @@ services:
         restart: true
     volumes:
       - ../cognite:/config
+      - ../cognite/logs:/extractor/logs
+

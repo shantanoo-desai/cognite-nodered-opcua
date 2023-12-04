@@ -1,14 +1,14 @@
 services:
   nodered:
     image: docker.io/nodered/node-red:3.0.1
-    container_name: celanese-nodered
+    container_name: cognite-nodered
     restart: always
     ports:
       - "1880:1880"
       - "4840:4840"
     volumes:
-      - celanese-nodered:/data
+      - cognite-nodered:/data
 
 volumes:
-  celanese-nodered:
+  cognite-nodered:
 

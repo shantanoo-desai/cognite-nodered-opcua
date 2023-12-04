@@ -11,13 +11,14 @@ interval = "1s"
     quiet = false
     hostname = ""
     omit_hostname = true
+
 [[outputs.file]]
   files = ["stdout"]
   data_format = "json"
 
 [[inputs.opcua]]
-   name = "celaneseCDF"
-   endpoint = "opc.tcp://celanese-nodered:4840"
+   name = "cogniteOPCUA"
+   endpoint = "opc.tcp://cognite-nodered:4840"
    ## Maximum time allowed to establish a connect to the endpoint.
   connect_timeout = "60s"
   #
@@ -30,14 +31,6 @@ interval = "1s"
   #
   ## Security mode, one of "None", "Sign", "SignAndEncrypt", or "auto"
   security_mode = "None"
-  #
-  ## Path to cert.pem. Required when security mode or policy isn't "None".
-  ## If cert path is not supplied, self-signed cert and key will be generated.
-  # certificate = "/etc/telegraf/cert.pem"
-  #
-  ## Path to private key.pem. Required when security mode or policy isn't "None".
-  ## If key path is not supplied, self-signed cert and key will be generated.
-  # private_key = "/etc/telegraf/key.pem"
   #
   ## Authentication Method, one of "Certificate", "UserName", or "Anonymous".  To
   ## authenticate using a specific ID, select 'Certificate' or 'UserName'
