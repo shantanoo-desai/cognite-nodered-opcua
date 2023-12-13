@@ -1,6 +1,6 @@
 services:
   cognite:
-    image: cognite/opcua-extractor-net:2.22.1
+    image: cognite/opcua-extractor-net:2.22.2
     container_name: cognite-cdf
     env_file:
       - ../cognite/.env

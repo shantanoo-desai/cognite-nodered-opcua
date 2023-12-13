@@ -2,6 +2,7 @@ services:
   nodered:
     image: docker.io/nodered/node-red:3.0.1
     container_name: cognite-nodered
+    hostname: ${HOSTNAME:-cognite-nodered}
     restart: always
     ports:
       - "1880:1880"

@@ -56,6 +56,11 @@ cognite:
 extraction:
     # Global prefix for externalId in destinations. Should be unique to prevent name conflicts.
     id-prefix: "gp:"
+    data-push-delay: 1000
+    root-node:
+      namespace-uri: urn:${SYSTEM_HOSTNAME}:NodeRED-IIoT-Fix-Server-4840
+      node-id: s=SimPF2
+
     data-types:    
         
         # Set to true to allow fetching string variables. This means that all variables with non-numeric type is converted to string in some way.

@@ -1,0 +1,2845 @@
+[2023-12-01 14:50:42.839 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 14:50:43.096 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 14:50:43.102 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 14:50:43.118 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 14:50:43.118 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 14:50:43.124 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 14:50:43.124 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 14:50:43.130 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 14:50:43.709 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 14:50:43.965 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 14:50:43.965 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 14:50:43.968 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 14:50:45.970 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 14:50:45.973 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 14:50:45.973 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 14:50:45.974 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 14:50:49.974 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 14:50:50.052 INF] [Cognite.OpcUa.UAClient] Attempt to connect to endpoint at opc.tcp://emerson-nodered:4840/UA/NodeREDFixIIoTServer with security: http://opcfoundation.org/UA/SecurityPolicy#None using user identity Anonymous
+[2023-12-01 14:50:50.315 INF] [Cognite.OpcUa.UAClient] Successfully connected to server
+[2023-12-01 14:50:50.327 INF] [Cognite.OpcUa.UAClient] Successfully connected to server at opc.tcp://emerson-nodered:4840/
+[2023-12-01 14:50:50.334 INF] [Cognite.OpcUa.ServerInfoHelper] Reading values from server configuration to determine upper limits
+[2023-12-01 14:50:50.340 VRB] [Cognite.OpcUa.UAClient] Run task read for  attempt 1/5. Elapsed: "00:00:00.0000046"
+[2023-12-01 14:50:50.354 DBG] [Cognite.OpcUa.UAClient] Read 7 / 7 attributes
+[2023-12-01 14:50:50.355 INF] [Cognite.OpcUa.UAClient] Read 7 attributes with 1 operations for 7 nodes
+[2023-12-01 14:50:50.361 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on browse node parallelism by the server, the extractor will continue with 0
+[2023-12-01 14:50:50.361 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on history node parallelism by the server, the extractor will continue with 0
+[2023-12-01 14:50:50.362 INF] [Cognite.OpcUa.ServerInfoHelper] Upper limit on browse nodes chunk is 2000, but configured to 1000
+[2023-12-01 14:50:50.362 INF] [Cognite.OpcUa.ServerInfoHelper] Max attribute read chunk is restricted to 1000
+[2023-12-01 14:50:50.365 INF] [Cognite.OpcUa.UAExtractor] Begin mapping main directory
+[2023-12-01 14:50:50.368 DBG] [Cognite.OpcUa.Browse.Browser] Browse node tree for nodes i=85
+[2023-12-01 14:50:50.372 VRB] [Cognite.OpcUa.UAClient] Run task read for  for root nodes attempt 1/5. Elapsed: "00:00:00.0000002"
+[2023-12-01 14:50:50.376 DBG] [Cognite.OpcUa.UAClient] Read 4 / 4 attributes for root nodes
+[2023-12-01 14:50:50.376 INF] [Cognite.OpcUa.UAClient] Read 4 attributes with 1 operations for 1 nodes for root nodes
+[2023-12-01 14:50:50.384 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Objects, i=85: "Object"
+[2023-12-01 14:50:50.391 INF] [Cognite.OpcUa.Browse.Browser] Begin browsing 1 nodes for the main instance hierarchy
+[2023-12-01 14:50:50.392 DBG] [Cognite.OpcUa.Browse.Browser] Browse node hierarchy for the main instance hierarchy for i=85
+[2023-12-01 14:50:50.411 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000014"
+[2023-12-01 14:50:50.415 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000006"
+[2023-12-01 14:50:50.438 VRB] [Cognite.OpcUa.Browse.Browser] Read 3 children from node i=85 for the main instance hierarchy
+[2023-12-01 14:50:50.440 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Tanks, ns=1;i=1001: "Object"
+[2023-12-01 14:50:50.441 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Bianco Royal, ns=1;i=1234: "Object"
+[2023-12-01 14:50:50.442 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 1 total operations. 1/3
+[2023-12-01 14:50:50.444 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000006"
+[2023-12-01 14:50:50.444 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000004"
+[2023-12-01 14:50:50.451 VRB] [Cognite.OpcUa.Browse.Browser] Read 6 children from node ns=1;i=1001 for the main instance hierarchy
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Oil Tank Level, ns=1;i=1002: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node OilTankLevelCondition, ns=1;i=1003: "Object"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Gas Tank Level, ns=1;i=1050: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node GasTankLevelCondition, ns=1;i=1051: "Object"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.Browse.Browser] Read 14 children from node ns=1;i=1234 for the main instance hierarchy
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node MyVariable1, ns=1;i=16479: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node MyVariable2, ns=1;b=ECD/qg==: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Test Read and Write, ns=1;s=TestReadWrite: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Free Memory, ns=1;s=free_memory: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Counter, ns=1;s=Counter: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node FullCounter, ns=1;s=FullCounter: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Pressure, ns=1;s=Pressure: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Matrix, ns=1;s=Matrix: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Position, ns=1;s=Position: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Pump Speed, ns=1;s=PumpSpeed: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Some Date, ns=1;s=SomeDate: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Multi Language Text, ns=1;s=MultiLanguageText: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node FanSpeed, ns=1;s=FanSpeed: "Variable"
+[2023-12-01 14:50:50.452 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node TemperatureAnalogItem, ns=1;s=TemperatureAnalogItem: "Variable"
+[2023-12-01 14:50:50.453 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 3 total operations. 3/19
+[2023-12-01 14:50:50.453 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000007"
+[2023-12-01 14:50:50.453 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000005"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.Browse.Browser] Read 28 children from node ns=1;i=1003 for the main instance hierarchy
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ActiveState, ns=1;i=1004: "Variable"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node LimitState, ns=1;i=1006: "Object"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node HighHighLimit, ns=1;i=1009: "Variable"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node HighLimit, ns=1;i=1010: "Variable"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node LowLimit, ns=1;i=1011: "Variable"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node EnabledState, ns=1;i=1012: "Variable"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node InputNode, ns=1;i=1014: "Variable"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node SuppressedOrShelved, ns=1;i=1015: "Variable"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node AckedState, ns=1;i=1016: "Variable"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ConfirmedState, ns=1;i=1018: "Variable"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ConditionClassId, ns=1;i=1024: "Variable"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ConditionClassName, ns=1;i=1025: "Variable"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ConditionName, ns=1;i=1026: "Variable"
+[2023-12-01 14:50:50.463 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node BranchId, ns=1;i=1027: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Retain, ns=1;i=1028: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Quality, ns=1;i=1029: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node LastSeverity, ns=1;i=1031: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Comment, ns=1;i=1033: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ClientUserId, ns=1;i=1035: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node EventId, ns=1;i=1040: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node EventType, ns=1;i=1041: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node SourceNode, ns=1;i=1042: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node SourceName, ns=1;i=1043: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Time, ns=1;i=1044: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ReceiveTime, ns=1;i=1045: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node LocalTime, ns=1;i=1046: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Message, ns=1;i=1047: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Severity, ns=1;i=1048: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.Browse.Browser] Read 30 children from node ns=1;i=1051 for the main instance hierarchy
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ActiveState, ns=1;i=1052: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node HighHighState, ns=1;i=1054: "Variable"
+[2023-12-01 14:50:50.464 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node HighState, ns=1;i=1056: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node LowState, ns=1;i=1058: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node HighHighLimit, ns=1;i=1060: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node HighLimit, ns=1;i=1061: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node LowLimit, ns=1;i=1062: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node EnabledState, ns=1;i=1063: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node InputNode, ns=1;i=1065: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node SuppressedOrShelved, ns=1;i=1066: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node AckedState, ns=1;i=1067: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ConfirmedState, ns=1;i=1069: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ConditionClassId, ns=1;i=1075: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ConditionClassName, ns=1;i=1076: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ConditionName, ns=1;i=1077: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node BranchId, ns=1;i=1078: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Retain, ns=1;i=1079: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Quality, ns=1;i=1080: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node LastSeverity, ns=1;i=1082: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Comment, ns=1;i=1084: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ClientUserId, ns=1;i=1086: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node EventId, ns=1;i=1091: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node EventType, ns=1;i=1092: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node SourceNode, ns=1;i=1093: "Variable"
+[2023-12-01 14:50:50.465 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node SourceName, ns=1;i=1094: "Variable"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Time, ns=1;i=1095: "Variable"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ReceiveTime, ns=1;i=1096: "Variable"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node LocalTime, ns=1;i=1097: "Variable"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Message, ns=1;i=1098: "Variable"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Severity, ns=1;i=1099: "Variable"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;s=free_memory for the main instance hierarchy
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node HA Configuration, ns=1;i=1101: "Object"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;s=Counter for the main instance hierarchy
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node HA Configuration, ns=1;i=1113: "Object"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;s=FullCounter for the main instance hierarchy
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node HA Configuration, ns=1;i=1125: "Object"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.Browse.Browser] Read 5 children from node ns=1;s=TemperatureAnalogItem for the main instance hierarchy
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Definition, ns=1;s=TemperatureAnalogItem-Definition: "Variable"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node ValuePrecision, ns=1;s=TemperatureAnalogItem-ValuePrecision: "Variable"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node EURange, ns=1;s=TemperatureAnalogItem-EURange: "Variable"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node InstrumentRange, ns=1;s=TemperatureAnalogItem-InstrumentRange: "Variable"
+[2023-12-01 14:50:50.466 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node EngineeringUnits, ns=1;s=TemperatureAnalogItem-EngineeringUnits: "Variable"
+[2023-12-01 14:50:50.466 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 19 total operations. 19/40
+[2023-12-01 14:50:50.467 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000013"
+[2023-12-01 14:50:50.467 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000007"
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1004 for the main instance hierarchy
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Id, ns=1;i=1005: "Variable"
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1006 for the main instance hierarchy
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node CurrentState, ns=1;i=1007: "Variable"
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.Browse.Browser] Read 2 children from node ns=1;i=1012 for the main instance hierarchy
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Id, ns=1;i=1013: "Variable"
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node EffectiveDisplayName, ns=1;i=1049: "Variable"
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1016 for the main instance hierarchy
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Id, ns=1;i=1017: "Variable"
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1018 for the main instance hierarchy
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Id, ns=1;i=1019: "Variable"
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1029 for the main instance hierarchy
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node SourceTimestamp, ns=1;i=1030: "Variable"
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1031 for the main instance hierarchy
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node SourceTimestamp, ns=1;i=1032: "Variable"
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1033 for the main instance hierarchy
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node SourceTimestamp, ns=1;i=1034: "Variable"
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1052 for the main instance hierarchy
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Id, ns=1;i=1053: "Variable"
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1054 for the main instance hierarchy
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Id, ns=1;i=1055: "Variable"
+[2023-12-01 14:50:50.476 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1056 for the main instance hierarchy
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Id, ns=1;i=1057: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1058 for the main instance hierarchy
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Id, ns=1;i=1059: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.Browse.Browser] Read 2 children from node ns=1;i=1063 for the main instance hierarchy
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Id, ns=1;i=1064: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node EffectiveDisplayName, ns=1;i=1100: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1067 for the main instance hierarchy
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Id, ns=1;i=1068: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1069 for the main instance hierarchy
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Id, ns=1;i=1070: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1080 for the main instance hierarchy
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node SourceTimestamp, ns=1;i=1081: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1082 for the main instance hierarchy
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node SourceTimestamp, ns=1;i=1083: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1084 for the main instance hierarchy
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node SourceTimestamp, ns=1;i=1085: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.Browse.Browser] Read 7 children from node ns=1;i=1101 for the main instance hierarchy
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node AggregateConfiguration, ns=1;i=1102: "Object"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Stepped, ns=1;i=1107: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Definition, ns=1;i=1108: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node MaxTimeInterval, ns=1;i=1109: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node MinTimeInterval, ns=1;i=1110: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node StartOfArchive, ns=1;i=1111: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node StartOfOnlineArchive, ns=1;i=1112: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.Browse.Browser] Read 7 children from node ns=1;i=1113 for the main instance hierarchy
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node AggregateConfiguration, ns=1;i=1114: "Object"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Stepped, ns=1;i=1119: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Definition, ns=1;i=1120: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node MaxTimeInterval, ns=1;i=1121: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node MinTimeInterval, ns=1;i=1122: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node StartOfArchive, ns=1;i=1123: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node StartOfOnlineArchive, ns=1;i=1124: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.Browse.Browser] Read 7 children from node ns=1;i=1125 for the main instance hierarchy
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node AggregateConfiguration, ns=1;i=1126: "Object"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Stepped, ns=1;i=1131: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Definition, ns=1;i=1132: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node MaxTimeInterval, ns=1;i=1133: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node MinTimeInterval, ns=1;i=1134: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node StartOfArchive, ns=1;i=1135: "Variable"
+[2023-12-01 14:50:50.477 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node StartOfOnlineArchive, ns=1;i=1136: "Variable"
+[2023-12-01 14:50:50.477 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 40 total operations. 40/44
+[2023-12-01 14:50:50.478 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000009"
+[2023-12-01 14:50:50.478 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000006"
+[2023-12-01 14:50:50.481 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node ns=1;i=1007 for the main instance hierarchy
+[2023-12-01 14:50:50.481 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Id, ns=1;i=1008: "Variable"
+[2023-12-01 14:50:50.481 VRB] [Cognite.OpcUa.Browse.Browser] Read 4 children from node ns=1;i=1102 for the main instance hierarchy
+[2023-12-01 14:50:50.481 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node TreatUncertainAsBad, ns=1;i=1103: "Variable"
+[2023-12-01 14:50:50.481 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node PercentDataBad, ns=1;i=1104: "Variable"
+[2023-12-01 14:50:50.481 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node PercentDataGood, ns=1;i=1105: "Variable"
+[2023-12-01 14:50:50.481 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node UseSlopedExtrapolation, ns=1;i=1106: "Variable"
+[2023-12-01 14:50:50.481 VRB] [Cognite.OpcUa.Browse.Browser] Read 4 children from node ns=1;i=1114 for the main instance hierarchy
+[2023-12-01 14:50:50.481 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node TreatUncertainAsBad, ns=1;i=1115: "Variable"
+[2023-12-01 14:50:50.481 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node PercentDataBad, ns=1;i=1116: "Variable"
+[2023-12-01 14:50:50.481 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node PercentDataGood, ns=1;i=1117: "Variable"
+[2023-12-01 14:50:50.482 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node UseSlopedExtrapolation, ns=1;i=1118: "Variable"
+[2023-12-01 14:50:50.482 VRB] [Cognite.OpcUa.Browse.Browser] Read 4 children from node ns=1;i=1126 for the main instance hierarchy
+[2023-12-01 14:50:50.482 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node TreatUncertainAsBad, ns=1;i=1127: "Variable"
+[2023-12-01 14:50:50.482 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node PercentDataBad, ns=1;i=1128: "Variable"
+[2023-12-01 14:50:50.482 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node PercentDataGood, ns=1;i=1129: "Variable"
+[2023-12-01 14:50:50.482 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node UseSlopedExtrapolation, ns=1;i=1130: "Variable"
+[2023-12-01 14:50:50.482 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 44 total operations. 44/44
+[2023-12-01 14:50:50.486 INF] [Cognite.OpcUa.Browse.Browser] Browsed a total of 44 nodes in 5 operations, and found 143 nodes total for the main instance hierarchy
+[2023-12-01 14:50:50.487 DBG] [Cognite.OpcUa.Browse.Browser] Total results for the main instance hierarchy by depth:
+    0: 1
+    1: 2
+    2: 20
+    3: 66
+    4: 41
+    5: 13
+
+[2023-12-01 14:50:50.502 VRB] [Cognite.OpcUa.UAClient] Run task read for  for node hierarchy information attempt 1/5. Elapsed: "00:00:00.0000002"
+[2023-12-01 14:50:50.532 DBG] [Cognite.OpcUa.UAClient] Read 657 / 657 attributes for node hierarchy information
+[2023-12-01 14:50:50.532 INF] [Cognite.OpcUa.UAClient] Read 657 attributes with 1 operations for 141 nodes for node hierarchy information
+[2023-12-01 14:50:50.533 INF] [Cognite.OpcUa.UAClient] Retrieved 657/657 core attributes for 141 nodes
+[2023-12-01 14:50:50.549 INF] [Cognite.OpcUa.TypeCollectors.TypeManager] Building type information from nodes in memory
+[2023-12-01 14:50:50.552 INF] [Cognite.OpcUa.UAClient] Get the current values of 97 variables
+[2023-12-01 14:50:50.552 VRB] [Cognite.OpcUa.UAClient] Run task read for  for node values attempt 1/5. Elapsed: "00:00:00.0000004"
+[2023-12-01 14:50:50.566 DBG] [Cognite.OpcUa.UAClient] Read 97 / 97 attributes for node values
+[2023-12-01 14:50:50.566 INF] [Cognite.OpcUa.UAClient] Read 97 attributes with 1 operations for 97 nodes for node values
+[2023-12-01 14:50:50.572 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: Objects
+    Id: i=85
+    Description: The browse entry point when looking for objects in the server address space.
+    ObjectType: 
+        Id: i=0
+
+[2023-12-01 14:50:50.575 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: Tanks
+    Id: ns=1;i=1001
+    Parent: Objects i=85
+    Description: The Object representing some tanks
+    Properties:
+        Variable: Oil Tank Level
+            Id: ns=1;i=1002
+            Description: Fill level in percentage (0% to 100%) of the oil tank
+            DataType: 
+                Id: i=11
+                IsString: False
+            ArrayDimensions: 
+            Value: 0.5083329475362225
+        Variable: Gas Tank Level
+            Id: ns=1;i=1050
+            Description: Fill level in percentage (0% to 100%) of the gas tank
+            DataType: 
+                Id: i=11
+                IsString: False
+            ArrayDimensions: 
+            Value: 0.5083329475362225
+    ObjectType: 
+        Id: i=61
+
+[2023-12-01 14:50:50.576 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: Bianco Royal
+    Id: ns=1;i=1234
+    Parent: Objects i=85
+    Description: Bianco Royal - Software Innovations®
+    ObjectType: 
+        Id: i=61
+
+[2023-12-01 14:50:50.577 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: OilTankLevelCondition
+    Id: ns=1;i=1003
+    Parent: Tanks ns=1;i=1001
+    Description: ExclusiveLimitAlarmType Condition
+    Properties:
+        Variable: HighHighLimit
+            Id: ns=1;i=1009
+            DataType: 
+                Id: i=11
+                IsString: False
+            ArrayDimensions: 
+            Value: 0.9
+        Variable: HighLimit
+            Id: ns=1;i=1010
+            DataType: 
+                Id: i=11
+                IsString: False
+            ArrayDimensions: 
+            Value: 0.8
+        Variable: LowLimit
+            Id: ns=1;i=1011
+            DataType: 
+                Id: i=11
+                IsString: False
+            ArrayDimensions: 
+            Value: 0.2
+        Variable: InputNode
+            Id: ns=1;i=1014
+            DataType: 
+                Id: i=17
+                IsString: True
+            ArrayDimensions: 
+            Value: ns=1;i=1002
+        Variable: SuppressedOrShelved
+            Id: ns=1;i=1015
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+        Variable: ConditionClassId
+            Id: ns=1;i=1024
+            DataType: 
+                Id: i=17
+                IsString: True
+            ArrayDimensions: 
+            Value: i=11164
+        Variable: ConditionClassName
+            Id: ns=1;i=1025
+            DataType: 
+                Id: i=21
+                IsString: True
+            ArrayDimensions: 
+            Value: ProcessConditionClassType
+        Variable: ConditionName
+            Id: ns=1;i=1026
+            DataType: 
+                Id: i=12
+                IsString: True
+            ArrayDimensions: 
+            Value: OilLevelCondition
+        Variable: BranchId
+            Id: ns=1;i=1027
+            DataType: 
+                Id: i=17
+                IsString: True
+            ArrayDimensions: 
+            Value: i=0
+        Variable: Retain
+            Id: ns=1;i=1028
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+        Variable: ClientUserId
+            Id: ns=1;i=1035
+            DataType: 
+                Id: i=12
+                IsString: True
+            ArrayDimensions: 
+            Value: (null)
+        Variable: EventId
+            Id: ns=1;i=1040
+            Description: A globally unique identifier for the event.
+            DataType: 
+                Id: i=15
+                IsString: True
+            ArrayDimensions: 
+            Value: (null)
+        Variable: EventType
+            Id: ns=1;i=1041
+            Description: The identifier for the event type.
+            DataType: 
+                Id: i=17
+                IsString: True
+            ArrayDimensions: 
+            Value: i=9341
+        Variable: SourceNode
+            Id: ns=1;i=1042
+            Description: The source of the event.
+            DataType: 
+                Id: i=17
+                IsString: True
+            ArrayDimensions: 
+            Value: ns=1;i=1002
+        Variable: SourceName
+            Id: ns=1;i=1043
+            Description: A description of the source of the event.
+            DataType: 
+                Id: i=12
+                IsString: True
+            ArrayDimensions: 
+            Value: 1:OilTankLevel
+        Variable: Time
+            Id: ns=1;i=1044
+            Description: When the event occurred.
+            DataType: 
+                Id: i=294
+                IsString: True
+            ArrayDimensions: 
+            Value: 01/01/0001 00:00:00
+        Variable: ReceiveTime
+            Id: ns=1;i=1045
+            Description: When the server received the event from the underlying system.
+            DataType: 
+                Id: i=294
+                IsString: True
+            ArrayDimensions: 
+            Value: 01/01/0001 00:00:00
+        Variable: LocalTime
+            Id: ns=1;i=1046
+            Description: Information about the local time where the event originated.
+            DataType: 
+                Id: i=8912
+                IsString: True
+            ArrayDimensions: 
+            Value: {0 | False}
+        Variable: Message
+            Id: ns=1;i=1047
+            Description: A localized description of the event.
+            DataType: 
+                Id: i=21
+                IsString: True
+            ArrayDimensions: 
+            Value:  
+        Variable: Severity
+            Id: ns=1;i=1048
+            Description: Indicates how urgent an event is.
+            DataType: 
+                Id: i=5
+                IsString: False
+            ArrayDimensions: 
+            Value: 0
+    ObjectType: 
+        Id: i=9341
+
+[2023-12-01 14:50:50.578 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: GasTankLevelCondition
+    Id: ns=1;i=1051
+    Parent: Tanks ns=1;i=1001
+    Description: NonExclusiveLimitAlarmType Condition
+    Properties:
+        Variable: HighHighLimit
+            Id: ns=1;i=1060
+            DataType: 
+                Id: i=11
+                IsString: False
+            ArrayDimensions: 
+            Value: 0.9
+        Variable: HighLimit
+            Id: ns=1;i=1061
+            DataType: 
+                Id: i=11
+                IsString: False
+            ArrayDimensions: 
+            Value: 0.8
+        Variable: LowLimit
+            Id: ns=1;i=1062
+            DataType: 
+                Id: i=11
+                IsString: False
+            ArrayDimensions: 
+            Value: 0.2
+        Variable: InputNode
+            Id: ns=1;i=1065
+            DataType: 
+                Id: i=17
+                IsString: True
+            ArrayDimensions: 
+            Value: ns=1;i=1050
+        Variable: SuppressedOrShelved
+            Id: ns=1;i=1066
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+        Variable: ConditionClassId
+            Id: ns=1;i=1075
+            DataType: 
+                Id: i=17
+                IsString: True
+            ArrayDimensions: 
+            Value: i=11164
+        Variable: ConditionClassName
+            Id: ns=1;i=1076
+            DataType: 
+                Id: i=21
+                IsString: True
+            ArrayDimensions: 
+            Value: ProcessConditionClassType
+        Variable: ConditionName
+            Id: ns=1;i=1077
+            DataType: 
+                Id: i=12
+                IsString: True
+            ArrayDimensions: 
+            Value: GasLevelCondition
+        Variable: BranchId
+            Id: ns=1;i=1078
+            DataType: 
+                Id: i=17
+                IsString: True
+            ArrayDimensions: 
+            Value: i=0
+        Variable: Retain
+            Id: ns=1;i=1079
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+        Variable: ClientUserId
+            Id: ns=1;i=1086
+            DataType: 
+                Id: i=12
+                IsString: True
+            ArrayDimensions: 
+            Value: (null)
+        Variable: EventId
+            Id: ns=1;i=1091
+            Description: A globally unique identifier for the event.
+            DataType: 
+                Id: i=15
+                IsString: True
+            ArrayDimensions: 
+            Value: (null)
+        Variable: EventType
+            Id: ns=1;i=1092
+            Description: The identifier for the event type.
+            DataType: 
+                Id: i=17
+                IsString: True
+            ArrayDimensions: 
+            Value: i=9906
+        Variable: SourceNode
+            Id: ns=1;i=1093
+            Description: The source of the event.
+            DataType: 
+                Id: i=17
+                IsString: True
+            ArrayDimensions: 
+            Value: ns=1;i=1050
+        Variable: SourceName
+            Id: ns=1;i=1094
+            Description: A description of the source of the event.
+            DataType: 
+                Id: i=12
+                IsString: True
+            ArrayDimensions: 
+            Value: 1:GasTankLevel
+        Variable: Time
+            Id: ns=1;i=1095
+            Description: When the event occurred.
+            DataType: 
+                Id: i=294
+                IsString: True
+            ArrayDimensions: 
+            Value: 01/01/0001 00:00:00
+        Variable: ReceiveTime
+            Id: ns=1;i=1096
+            Description: When the server received the event from the underlying system.
+            DataType: 
+                Id: i=294
+                IsString: True
+            ArrayDimensions: 
+            Value: 01/01/0001 00:00:00
+        Variable: LocalTime
+            Id: ns=1;i=1097
+            Description: Information about the local time where the event originated.
+            DataType: 
+                Id: i=8912
+                IsString: True
+            ArrayDimensions: 
+            Value: {0 | False}
+        Variable: Message
+            Id: ns=1;i=1098
+            Description: A localized description of the event.
+            DataType: 
+                Id: i=21
+                IsString: True
+            ArrayDimensions: 
+            Value:  
+        Variable: Severity
+            Id: ns=1;i=1099
+            Description: Indicates how urgent an event is.
+            DataType: 
+                Id: i=5
+                IsString: False
+            ArrayDimensions: 
+            Value: 0
+    ObjectType: 
+        Id: i=9906
+
+[2023-12-01 14:50:50.578 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: LimitState
+    Id: ns=1;i=1006
+    Parent: OilTankLevelCondition ns=1;i=1003
+    ObjectType: 
+        Id: i=9318
+
+[2023-12-01 14:50:50.579 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: MyVariable1
+    Id: ns=1;i=16479
+    Parent: Bianco Royal ns=1;i=1234
+    DataType: 
+        Id: i=11
+        IsString: False
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.581 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: MyVariable2
+    Id: ns=1;b=ECD/qg==
+    Parent: Bianco Royal ns=1;i=1234
+    DataType: 
+        Id: i=11
+        IsString: False
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.581 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Test Read and Write
+    Id: ns=1;s=TestReadWrite
+    Parent: Bianco Royal ns=1;i=1234
+    DataType: 
+        Id: i=11
+        IsString: False
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.581 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Free Memory
+    Id: ns=1;s=free_memory
+    Parent: Bianco Royal ns=1;i=1234
+    Properties:
+        Object: HA Configuration
+            Id: ns=1;i=1101
+            Properties:
+                Object: AggregateConfiguration
+                    Id: ns=1;i=1102
+                    Properties:
+                        Variable: TreatUncertainAsBad
+                            Id: ns=1;i=1103
+                            DataType: 
+                                Id: i=1
+                                IsString: False
+                                IsStep: True
+                            ArrayDimensions: 
+                            Value: True
+                        Variable: PercentDataBad
+                            Id: ns=1;i=1104
+                            DataType: 
+                                Id: i=3
+                                IsString: False
+                            ArrayDimensions: 
+                            Value: 100
+                        Variable: PercentDataGood
+                            Id: ns=1;i=1105
+                            DataType: 
+                                Id: i=3
+                                IsString: False
+                            ArrayDimensions: 
+                            Value: 100
+                        Variable: UseSlopedExtrapolation
+                            Id: ns=1;i=1106
+                            DataType: 
+                                Id: i=1
+                                IsString: False
+                                IsStep: True
+                            ArrayDimensions: 
+                            Value: (null)
+                    ObjectType: 
+                        Id: i=11187
+                Variable: Stepped
+                    Id: ns=1;i=1107
+                    DataType: 
+                        Id: i=1
+                        IsString: False
+                        IsStep: True
+                    ArrayDimensions: 
+                    Value: False
+                Variable: Definition
+                    Id: ns=1;i=1108
+                    DataType: 
+                        Id: i=12
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: (null)
+                Variable: MaxTimeInterval
+                    Id: ns=1;i=1109
+                    DataType: 
+                        Id: i=290
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: 10000
+                Variable: MinTimeInterval
+                    Id: ns=1;i=1110
+                    DataType: 
+                        Id: i=290
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: 100
+                Variable: StartOfArchive
+                    Id: ns=1;i=1111
+                    DataType: 
+                        Id: i=294
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: 12/01/2023 14:50:49
+                Variable: StartOfOnlineArchive
+                    Id: ns=1;i=1112
+                    DataType: 
+                        Id: i=294
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: 12/01/2023 14:50:49
+            ObjectType: 
+                Id: i=2318
+    DataType: 
+        Id: i=11
+        IsString: False
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.581 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Counter
+    Id: ns=1;s=Counter
+    Parent: Bianco Royal ns=1;i=1234
+    Properties:
+        Object: HA Configuration
+            Id: ns=1;i=1113
+            Properties:
+                Object: AggregateConfiguration
+                    Id: ns=1;i=1114
+                    Properties:
+                        Variable: TreatUncertainAsBad
+                            Id: ns=1;i=1115
+                            DataType: 
+                                Id: i=1
+                                IsString: False
+                                IsStep: True
+                            ArrayDimensions: 
+                            Value: True
+                        Variable: PercentDataBad
+                            Id: ns=1;i=1116
+                            DataType: 
+                                Id: i=3
+                                IsString: False
+                            ArrayDimensions: 
+                            Value: 100
+                        Variable: PercentDataGood
+                            Id: ns=1;i=1117
+                            DataType: 
+                                Id: i=3
+                                IsString: False
+                            ArrayDimensions: 
+                            Value: 100
+                        Variable: UseSlopedExtrapolation
+                            Id: ns=1;i=1118
+                            DataType: 
+                                Id: i=1
+                                IsString: False
+                                IsStep: True
+                            ArrayDimensions: 
+                            Value: (null)
+                    ObjectType: 
+                        Id: i=11187
+                Variable: Stepped
+                    Id: ns=1;i=1119
+                    DataType: 
+                        Id: i=1
+                        IsString: False
+                        IsStep: True
+                    ArrayDimensions: 
+                    Value: False
+                Variable: Definition
+                    Id: ns=1;i=1120
+                    DataType: 
+                        Id: i=12
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: (null)
+                Variable: MaxTimeInterval
+                    Id: ns=1;i=1121
+                    DataType: 
+                        Id: i=290
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: 10000
+                Variable: MinTimeInterval
+                    Id: ns=1;i=1122
+                    DataType: 
+                        Id: i=290
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: 100
+                Variable: StartOfArchive
+                    Id: ns=1;i=1123
+                    DataType: 
+                        Id: i=294
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: 12/01/2023 14:50:49
+                Variable: StartOfOnlineArchive
+                    Id: ns=1;i=1124
+                    DataType: 
+                        Id: i=294
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: 12/01/2023 14:50:49
+            ObjectType: 
+                Id: i=2318
+    DataType: 
+        Id: i=5
+        IsString: False
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.581 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: FullCounter
+    Id: ns=1;s=FullCounter
+    Parent: Bianco Royal ns=1;i=1234
+    Properties:
+        Object: HA Configuration
+            Id: ns=1;i=1125
+            Properties:
+                Object: AggregateConfiguration
+                    Id: ns=1;i=1126
+                    Properties:
+                        Variable: TreatUncertainAsBad
+                            Id: ns=1;i=1127
+                            DataType: 
+                                Id: i=1
+                                IsString: False
+                                IsStep: True
+                            ArrayDimensions: 
+                            Value: True
+                        Variable: PercentDataBad
+                            Id: ns=1;i=1128
+                            DataType: 
+                                Id: i=3
+                                IsString: False
+                            ArrayDimensions: 
+                            Value: 100
+                        Variable: PercentDataGood
+                            Id: ns=1;i=1129
+                            DataType: 
+                                Id: i=3
+                                IsString: False
+                            ArrayDimensions: 
+                            Value: 100
+                        Variable: UseSlopedExtrapolation
+                            Id: ns=1;i=1130
+                            DataType: 
+                                Id: i=1
+                                IsString: False
+                                IsStep: True
+                            ArrayDimensions: 
+                            Value: (null)
+                    ObjectType: 
+                        Id: i=11187
+                Variable: Stepped
+                    Id: ns=1;i=1131
+                    DataType: 
+                        Id: i=1
+                        IsString: False
+                        IsStep: True
+                    ArrayDimensions: 
+                    Value: False
+                Variable: Definition
+                    Id: ns=1;i=1132
+                    DataType: 
+                        Id: i=12
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: (null)
+                Variable: MaxTimeInterval
+                    Id: ns=1;i=1133
+                    DataType: 
+                        Id: i=290
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: 10000
+                Variable: MinTimeInterval
+                    Id: ns=1;i=1134
+                    DataType: 
+                        Id: i=290
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: 100
+                Variable: StartOfArchive
+                    Id: ns=1;i=1135
+                    DataType: 
+                        Id: i=294
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: 12/01/2023 14:50:49
+                Variable: StartOfOnlineArchive
+                    Id: ns=1;i=1136
+                    DataType: 
+                        Id: i=294
+                        IsString: True
+                    ArrayDimensions: 
+                    Value: 12/01/2023 14:50:49
+            ObjectType: 
+                Id: i=2318
+    DataType: 
+        Id: i=6
+        IsString: False
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.581 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Pressure
+    Id: ns=1;s=Pressure
+    Parent: Bianco Royal ns=1;i=1234
+    DataType: 
+        Id: i=11
+        IsString: False
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.582 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Matrix
+    Id: ns=1;s=Matrix
+    Parent: Bianco Royal ns=1;i=1234
+    DataType: 
+        Id: i=11
+        IsString: False
+    ValueRank: 2
+    ArrayDimensions: 3, 3
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.582 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable Matrix ns=1;s=Matrix due to non-scalar ValueRank TwoDimensions and too high dimensionality 2
+[2023-12-01 14:50:50.582 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Position
+    Id: ns=1;s=Position
+    Parent: Bianco Royal ns=1;i=1234
+    DataType: 
+        Id: i=11
+        IsString: False
+    ValueRank: 1
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.582 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable Position ns=1;s=Position due to non-scalar ValueRank OneDimension and too high dimensionality 0
+[2023-12-01 14:50:50.582 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Pump Speed
+    Id: ns=1;s=PumpSpeed
+    Parent: Bianco Royal ns=1;i=1234
+    DataType: 
+        Id: i=11
+        IsString: False
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.582 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Some Date
+    Id: ns=1;s=SomeDate
+    Parent: Bianco Royal ns=1;i=1234
+    DataType: 
+        Id: i=13
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.582 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable Some Date ns=1;s=SomeDate due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.582 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Multi Language Text
+    Id: ns=1;s=MultiLanguageText
+    Parent: Bianco Royal ns=1;i=1234
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.582 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable Multi Language Text ns=1;s=MultiLanguageText due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.582 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: FanSpeed
+    Id: ns=1;s=FanSpeed
+    Parent: Bianco Royal ns=1;i=1234
+    DataType: 
+        Id: i=11
+        IsString: False
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 14:50:50.583 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: TemperatureAnalogItem
+    Id: ns=1;s=TemperatureAnalogItem
+    Parent: Bianco Royal ns=1;i=1234
+    Properties:
+        Variable: Definition
+            Id: ns=1;s=TemperatureAnalogItem-Definition
+            Description: Definition  is a vendor - specific, human readable string that specifies how the value of this  DataItem  is calculated.
+            DataType: 
+                Id: i=12
+                IsString: True
+            ArrayDimensions: 
+            Value: (tempA -25) + tempB
+        Variable: ValuePrecision
+            Id: ns=1;s=TemperatureAnalogItem-ValuePrecision
+            DataType: 
+                Id: i=11
+                IsString: False
+            ArrayDimensions: 
+            Value: 0.5
+        Variable: EURange
+            Id: ns=1;s=TemperatureAnalogItem-EURange
+            DataType: 
+                Id: i=884
+                IsString: True
+            ArrayDimensions: 
+            Value: {100 | 200}
+        Variable: InstrumentRange
+            Id: ns=1;s=TemperatureAnalogItem-InstrumentRange
+            DataType: 
+                Id: i=884
+                IsString: True
+            ArrayDimensions: 
+            Value: {-100 | 200}
+        Variable: EngineeringUnits
+            Id: ns=1;s=TemperatureAnalogItem-EngineeringUnits
+            DataType: 
+                Id: i=887
+                IsString: True
+            ArrayDimensions: 
+            Value: {http://www.opcfoundation.org/UA/units/un/cefact | 4408652 | °C | degree Celsius}
+    DataType: 
+        Id: i=11
+        IsString: False
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=2368
+
+[2023-12-01 14:50:50.583 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: ActiveState
+    Id: ns=1;i=1004
+    Parent: OilTankLevelCondition ns=1;i=1003
+    Properties:
+        Variable: Id
+            Id: ns=1;i=1005
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=8995
+
+[2023-12-01 14:50:50.583 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable ActiveState ns=1;i=1004 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.583 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: EnabledState
+    Id: ns=1;i=1012
+    Parent: OilTankLevelCondition ns=1;i=1003
+    Properties:
+        Variable: Id
+            Id: ns=1;i=1013
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: True
+        Variable: EffectiveDisplayName
+            Id: ns=1;i=1049
+            DataType: 
+                Id: i=21
+                IsString: True
+            ArrayDimensions: 
+            Value: Enabled
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=8995
+
+[2023-12-01 14:50:50.583 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable EnabledState ns=1;i=1012 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.583 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: AckedState
+    Id: ns=1;i=1016
+    Parent: OilTankLevelCondition ns=1;i=1003
+    Properties:
+        Variable: Id
+            Id: ns=1;i=1017
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=8995
+
+[2023-12-01 14:50:50.583 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable AckedState ns=1;i=1016 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.583 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: ConfirmedState
+    Id: ns=1;i=1018
+    Parent: OilTankLevelCondition ns=1;i=1003
+    Properties:
+        Variable: Id
+            Id: ns=1;i=1019
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=8995
+
+[2023-12-01 14:50:50.583 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable ConfirmedState ns=1;i=1018 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.583 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Quality
+    Id: ns=1;i=1029
+    Parent: OilTankLevelCondition ns=1;i=1003
+    Properties:
+        Variable: SourceTimestamp
+            Id: ns=1;i=1030
+            DataType: 
+                Id: i=294
+                IsString: True
+            ArrayDimensions: 
+            Value: 12/01/2023 14:50:49
+    DataType: 
+        Id: i=19
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=9002
+
+[2023-12-01 14:50:50.583 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable Quality ns=1;i=1029 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.583 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: LastSeverity
+    Id: ns=1;i=1031
+    Parent: OilTankLevelCondition ns=1;i=1003
+    Properties:
+        Variable: SourceTimestamp
+            Id: ns=1;i=1032
+            DataType: 
+                Id: i=294
+                IsString: True
+            ArrayDimensions: 
+            Value: 12/01/2023 14:50:49
+    DataType: 
+        Id: i=5
+        IsString: False
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=9002
+
+[2023-12-01 14:50:50.583 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Comment
+    Id: ns=1;i=1033
+    Parent: OilTankLevelCondition ns=1;i=1003
+    Properties:
+        Variable: SourceTimestamp
+            Id: ns=1;i=1034
+            DataType: 
+                Id: i=294
+                IsString: True
+            ArrayDimensions: 
+            Value: 12/01/2023 14:50:49
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=9002
+
+[2023-12-01 14:50:50.583 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable Comment ns=1;i=1033 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.584 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: ActiveState
+    Id: ns=1;i=1052
+    Parent: GasTankLevelCondition ns=1;i=1051
+    Properties:
+        Variable: Id
+            Id: ns=1;i=1053
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=8995
+
+[2023-12-01 14:50:50.584 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable ActiveState ns=1;i=1052 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.584 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: HighHighState
+    Id: ns=1;i=1054
+    Parent: GasTankLevelCondition ns=1;i=1051
+    Properties:
+        Variable: Id
+            Id: ns=1;i=1055
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=8995
+
+[2023-12-01 14:50:50.584 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable HighHighState ns=1;i=1054 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.584 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: HighState
+    Id: ns=1;i=1056
+    Parent: GasTankLevelCondition ns=1;i=1051
+    Properties:
+        Variable: Id
+            Id: ns=1;i=1057
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=8995
+
+[2023-12-01 14:50:50.584 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable HighState ns=1;i=1056 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.584 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: LowState
+    Id: ns=1;i=1058
+    Parent: GasTankLevelCondition ns=1;i=1051
+    Properties:
+        Variable: Id
+            Id: ns=1;i=1059
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=8995
+
+[2023-12-01 14:50:50.584 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable LowState ns=1;i=1058 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.584 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: EnabledState
+    Id: ns=1;i=1063
+    Parent: GasTankLevelCondition ns=1;i=1051
+    Properties:
+        Variable: Id
+            Id: ns=1;i=1064
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: True
+        Variable: EffectiveDisplayName
+            Id: ns=1;i=1100
+            DataType: 
+                Id: i=21
+                IsString: True
+            ArrayDimensions: 
+            Value: Enabled
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=8995
+
+[2023-12-01 14:50:50.584 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable EnabledState ns=1;i=1063 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.584 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: AckedState
+    Id: ns=1;i=1067
+    Parent: GasTankLevelCondition ns=1;i=1051
+    Properties:
+        Variable: Id
+            Id: ns=1;i=1068
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=8995
+
+[2023-12-01 14:50:50.584 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable AckedState ns=1;i=1067 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.584 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: ConfirmedState
+    Id: ns=1;i=1069
+    Parent: GasTankLevelCondition ns=1;i=1051
+    Properties:
+        Variable: Id
+            Id: ns=1;i=1070
+            DataType: 
+                Id: i=1
+                IsString: False
+                IsStep: True
+            ArrayDimensions: 
+            Value: False
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=8995
+
+[2023-12-01 14:50:50.584 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable ConfirmedState ns=1;i=1069 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.584 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Quality
+    Id: ns=1;i=1080
+    Parent: GasTankLevelCondition ns=1;i=1051
+    Properties:
+        Variable: SourceTimestamp
+            Id: ns=1;i=1081
+            DataType: 
+                Id: i=294
+                IsString: True
+            ArrayDimensions: 
+            Value: 12/01/2023 14:50:49
+    DataType: 
+        Id: i=19
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=9002
+
+[2023-12-01 14:50:50.584 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable Quality ns=1;i=1080 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.584 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: LastSeverity
+    Id: ns=1;i=1082
+    Parent: GasTankLevelCondition ns=1;i=1051
+    Properties:
+        Variable: SourceTimestamp
+            Id: ns=1;i=1083
+            DataType: 
+                Id: i=294
+                IsString: True
+            ArrayDimensions: 
+            Value: 12/01/2023 14:50:49
+    DataType: 
+        Id: i=5
+        IsString: False
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=9002
+
+[2023-12-01 14:50:50.592 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Comment
+    Id: ns=1;i=1084
+    Parent: GasTankLevelCondition ns=1;i=1051
+    Properties:
+        Variable: SourceTimestamp
+            Id: ns=1;i=1085
+            DataType: 
+                Id: i=294
+                IsString: True
+            ArrayDimensions: 
+            Value: 12/01/2023 14:50:49
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=9002
+
+[2023-12-01 14:50:50.592 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable Comment ns=1;i=1084 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.592 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: CurrentState
+    Id: ns=1;i=1007
+    Parent: LimitState ns=1;i=1006
+    Properties:
+        Variable: Id
+            Id: ns=1;i=1008
+            DataType: 
+                Id: i=17
+                IsString: True
+            ArrayDimensions: 
+            Value: (null)
+    DataType: 
+        Id: i=21
+        IsString: True
+    ArrayDimensions: 
+    VariableType: 
+        Id: i=2760
+
+[2023-12-01 14:50:50.592 DBG] [Cognite.OpcUa.NodeSources.UANodeSource] Skipping variable CurrentState ns=1;i=1007 due to string datatype and allow-string-variables being set to false
+[2023-12-01 14:50:50.599 INF] [Cognite.OpcUa.NodeSources.UANodeSource] Mapping resulted in 6 destination objects and 12 destination timeseries, 6 objects and 12 variables.
+[2023-12-01 14:50:50.599 INF] [Cognite.OpcUa.UAExtractor] End mapping main directory
+[2023-12-01 14:50:50.607 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.Pushers.CDFPusher
+[2023-12-01 14:50:50.609 INF] [Cognite.OpcUa.Pushers.CDFPusher] Testing 18 nodes against CDF
+[2023-12-01 14:50:50.736 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.InfluxPusher
+[2023-12-01 14:50:50.742 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.InfluxPusher true
+[2023-12-01 14:50:50.743 INF] [Cognite.OpcUa.UAExtractor] Waiting for pushes on pushers
+[2023-12-01 14:51:02.779 ERR] [Cognite.OpcUa.Pushers.CDFPusher] Failed to initialize config
+System.Net.Http.HttpRequestException: Resource temporarily unavailable (login.microsoft.com:443)
+ ---> System.Net.Sockets.SocketException (11): Resource temporarily unavailable
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Oryx.HttpHandler.withTokenRenewer@264-1.MoveNext()
+   at Oryx.Pipeline.Core.runUnsafeAsync@35.MoveNext()
+   at CogniteSdk.Resources.Resource.RunAsync[T](FSharpFunc`2 handler)
+   at CogniteSdk.Resources.DataSetsResource.RetrieveAsync[T](IEnumerable`1 ids, Nullable`1 ignoreUnknownIds, CancellationToken token)
+   at CogniteSdk.Resources.DataSetsResource.RetrieveAsync(IEnumerable`1 ids, Nullable`1 ignoreUnknownIds, CancellationToken token)
+   at Cognite.Extensions.DataSetExtensions.Get(DataSetsResource resource, DataSetConfig config, CancellationToken token)
+   at Cognite.Extensions.DataSetExtensions.GetId(DataSetsResource resource, DataSetConfig config, CancellationToken token)
+   at Cognite.OpcUa.Pushers.CDFPusher.EnsureConfigInit(CancellationToken token) in /build/Extractor/Pushers/CDFPusher.cs:line 1092
+   at Cognite.OpcUa.Pushers.CDFPusher.PushNodes(IEnumerable`1 objects, IEnumerable`1 variables, IEnumerable`1 references, UpdateConfig update, CancellationToken token) in /build/Extractor/Pushers/CDFPusher.cs:line 330
+[2023-12-01 14:51:02.790 ERR] [Cognite.OpcUa.UAExtractor] Failed to push nodes on pusher Cognite.OpcUa.Pushers.CDFPusher
+[2023-12-01 14:51:02.794 INF] [Cognite.OpcUa.UAExtractor] Synchronize 12 nodes
+[2023-12-01 14:51:02.800 VRB] [Cognite.OpcUa.UAClient] Run task create subscription attempt 1/5. Elapsed: "00:00:00.0000023"
+[2023-12-01 14:51:02.869 DBG] [Cognite.OpcUa.UAClient] Add datapoint subscriptions for 12 nodes, 0 / 12 done.
+[2023-12-01 14:51:02.869 VRB] [Cognite.OpcUa.UAClient] Run task create monitored items attempt 1/5. Elapsed: "00:00:00.0000006"
+[2023-12-01 14:51:18.850 ERR] [Cognite.OpcUa.Pushers.CDFPusher] Failed to get CDF login status, this is likely a problem with the network or configuration. Project celanese-dev at https://az-eastus-1.cognitedata.com: Resource temporarily unavailable (login.microsoft.com:443)
+[2023-12-01 14:51:19.118 DBG] [Cognite.OpcUa.InfluxPusher] Successfully pushed 753 points to influxdb
+[2023-12-01 14:51:19.125 INF] [Cognite.OpcUa.FailureBuffer] Push 753 points to failurebuffer
+[2023-12-01 14:53:29.081 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 14:53:29.259 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 14:53:29.262 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 14:53:29.278 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 14:53:29.278 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 14:53:29.283 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 14:53:29.283 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 14:53:29.287 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 14:53:29.558 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 14:53:29.778 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 14:53:29.778 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 14:53:29.779 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 14:53:31.781 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 14:53:31.785 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 14:53:31.785 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 14:53:31.785 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 14:53:35.786 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 14:53:35.788 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 14:53:35.789 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 14:53:35.789 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 14:53:43.790 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 14:53:43.792 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 14:53:43.792 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 14:53:43.793 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:16"
+[2023-12-01 14:53:59.791 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 14:53:59.793 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 14:53:59.793 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 14:53:59.794 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:32"
+[2023-12-01 14:54:31.797 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 14:54:31.799 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 14:54:31.799 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 14:54:31.799 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:03:20.669 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 15:03:20.917 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 15:03:20.920 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 15:03:20.931 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 15:03:20.931 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 15:03:20.935 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 15:03:20.935 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 15:03:20.939 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 15:03:21.319 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:03:21.562 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:03:21.562 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:03:21.565 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 15:03:23.566 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:03:23.570 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:03:23.570 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:03:23.570 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 15:03:27.571 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:03:27.574 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:03:27.574 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:03:27.574 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 15:03:35.576 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:03:35.578 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:03:35.578 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:03:35.579 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:16"
+[2023-12-01 15:03:51.582 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:03:51.584 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:03:51.584 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:03:51.585 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:32"
+[2023-12-01 15:18:44.984 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 15:18:45.137 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 15:18:45.140 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 15:18:45.150 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 15:18:45.150 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 15:18:45.154 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 15:18:45.154 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 15:18:45.158 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 15:18:45.385 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:18:45.572 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:18:45.573 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:18:45.574 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 15:18:47.576 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:18:47.580 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:18:47.580 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:18:47.580 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 15:18:51.581 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:18:51.583 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:18:51.584 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:18:51.584 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 15:18:59.585 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:18:59.587 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:18:59.587 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:18:59.588 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:16"
+[2023-12-01 15:19:15.587 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:19:15.589 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:19:15.590 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:19:15.590 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:32"
+[2023-12-01 15:19:47.589 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:19:47.592 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:19:47.592 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:19:47.592 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:20:51.595 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:20:51.673 INF] [Cognite.OpcUa.UAClient] Attempt to connect to endpoint at opc.tcp://emerson-nodered:4840/UA/NodeREDFixIIoTServer with security: http://opcfoundation.org/UA/SecurityPolicy#None using user identity Anonymous
+[2023-12-01 15:20:51.966 INF] [Cognite.OpcUa.UAClient] Successfully connected to server
+[2023-12-01 15:20:51.978 INF] [Cognite.OpcUa.UAClient] Successfully connected to server at opc.tcp://emerson-nodered:4840/
+[2023-12-01 15:20:51.985 INF] [Cognite.OpcUa.ServerInfoHelper] Reading values from server configuration to determine upper limits
+[2023-12-01 15:20:51.991 VRB] [Cognite.OpcUa.UAClient] Run task read for  attempt 1/5. Elapsed: "00:00:00.0000014"
+[2023-12-01 15:20:52.002 DBG] [Cognite.OpcUa.UAClient] Read 7 / 7 attributes
+[2023-12-01 15:20:52.002 INF] [Cognite.OpcUa.UAClient] Read 7 attributes with 1 operations for 7 nodes
+[2023-12-01 15:20:52.006 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on browse node parallelism by the server, the extractor will continue with 0
+[2023-12-01 15:20:52.006 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on history node parallelism by the server, the extractor will continue with 0
+[2023-12-01 15:20:52.007 INF] [Cognite.OpcUa.ServerInfoHelper] Upper limit on browse nodes chunk is 2000, but configured to 1000
+[2023-12-01 15:20:52.007 INF] [Cognite.OpcUa.ServerInfoHelper] Max attribute read chunk is restricted to 1000
+[2023-12-01 15:20:52.010 INF] [Cognite.OpcUa.UAExtractor] Begin mapping main directory
+[2023-12-01 15:20:52.012 DBG] [Cognite.OpcUa.Browse.Browser] Browse node tree for nodes i=85
+[2023-12-01 15:20:52.015 VRB] [Cognite.OpcUa.UAClient] Run task read for  for root nodes attempt 1/5. Elapsed: "00:00:00.0000003"
+[2023-12-01 15:20:52.019 DBG] [Cognite.OpcUa.UAClient] Read 4 / 4 attributes for root nodes
+[2023-12-01 15:20:52.019 INF] [Cognite.OpcUa.UAClient] Read 4 attributes with 1 operations for 1 nodes for root nodes
+[2023-12-01 15:20:52.024 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Objects, i=85: "Object"
+[2023-12-01 15:20:52.031 INF] [Cognite.OpcUa.Browse.Browser] Begin browsing 1 nodes for the main instance hierarchy
+[2023-12-01 15:20:52.033 DBG] [Cognite.OpcUa.Browse.Browser] Browse node hierarchy for the main instance hierarchy for i=85
+[2023-12-01 15:20:52.047 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000013"
+[2023-12-01 15:20:52.051 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000006"
+[2023-12-01 15:20:52.073 VRB] [Cognite.OpcUa.Browse.Browser] Read 1 children from node i=85 for the main instance hierarchy
+[2023-12-01 15:20:52.073 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 1 total operations. 1/1
+[2023-12-01 15:20:52.076 INF] [Cognite.OpcUa.Browse.Browser] Browsed a total of 1 nodes in 1 operations, and found 1 nodes total for the main instance hierarchy
+[2023-12-01 15:20:52.077 DBG] [Cognite.OpcUa.Browse.Browser] Total results for the main instance hierarchy by depth:
+    0: 1
+
+[2023-12-01 15:20:52.087 VRB] [Cognite.OpcUa.UAClient] Run task read for  for node hierarchy information attempt 1/5. Elapsed: "00:00:00.0000002"
+[2023-12-01 15:20:52.089 DBG] [Cognite.OpcUa.UAClient] Read 1 / 1 attributes for node hierarchy information
+[2023-12-01 15:20:52.089 INF] [Cognite.OpcUa.UAClient] Read 1 attributes with 1 operations for 1 nodes for node hierarchy information
+[2023-12-01 15:20:52.090 INF] [Cognite.OpcUa.UAClient] Retrieved 1/1 core attributes for 1 nodes
+[2023-12-01 15:20:52.095 INF] [Cognite.OpcUa.TypeCollectors.TypeManager] Building type information from nodes in memory
+[2023-12-01 15:20:52.098 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: Objects
+    Id: i=85
+    Description: The browse entry point when looking for objects in the server address space.
+    ObjectType: 
+        Id: i=0
+
+[2023-12-01 15:20:52.101 INF] [Cognite.OpcUa.NodeSources.UANodeSource] Mapping resulted in 1 destination objects and 0 destination timeseries, 1 objects and 0 variables.
+[2023-12-01 15:20:52.101 INF] [Cognite.OpcUa.UAExtractor] End mapping main directory
+[2023-12-01 15:20:52.108 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.Pushers.CDFPusher
+[2023-12-01 15:20:52.110 INF] [Cognite.OpcUa.Pushers.CDFPusher] Testing 1 nodes against CDF
+[2023-12-01 15:20:52.236 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.InfluxPusher
+[2023-12-01 15:20:52.241 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.InfluxPusher true
+[2023-12-01 15:20:52.242 INF] [Cognite.OpcUa.UAExtractor] Waiting for pushes on pushers
+[2023-12-01 15:20:53.280 DBG] [Cognite.Extensions.IAuthenticator] New OIDC token. Expires on 2023-12-01 16:20:52.267
+[2023-12-01 15:20:53.842 DBG] [CogniteSdk.Client] CDF (DataSets:retrieve): POST https://az-eastus-1.cognitedata.com/api/v1/projects/celanese-dev/datasets/byids - 510 ms
+[2023-12-01 15:20:53.857 INF] [Cognite.Extractor.Utils.CogniteDestination] Getting or creating 0 time series in CDF
+[2023-12-01 15:20:53.864 INF] [Cognite.OpcUa.Pushers.CDFPusher] Finish pushing nodes to CDF
+[2023-12-01 15:20:53.867 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.Pushers.CDFPusher true
+[2023-12-01 15:20:53.868 INF] [Cognite.OpcUa.UAExtractor] Synchronize 0 nodes
+[2023-12-01 15:21:41.965 WRN] [Cognite.OpcUa.UAClient] Keep alive failed: BadNoCommunication 'Server not responding to keep alive requests.'
+[2023-12-01 15:21:41.965 WRN] [Cognite.OpcUa.UAClient] --- RECONNECTING ---
+[2023-12-01 15:22:41.067 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 15:22:41.233 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 15:22:41.236 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 15:22:41.245 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 15:22:41.246 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 15:22:41.249 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 15:22:41.249 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 15:22:41.252 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 15:22:41.518 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:22:41.705 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:22:41.705 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:22:41.706 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 15:22:43.707 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:22:43.710 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:22:43.711 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:22:43.711 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 15:22:47.712 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:22:47.714 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:22:47.714 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:22:47.714 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 15:22:55.715 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:22:55.717 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:22:55.718 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:22:55.718 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:16"
+[2023-12-01 15:23:11.718 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:23:11.720 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:23:11.720 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:23:11.721 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:32"
+[2023-12-01 15:23:43.724 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:23:43.726 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:23:43.727 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:23:43.727 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:24:47.727 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:24:47.730 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:24:47.730 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:24:47.731 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:26:33.848 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 15:26:34.013 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 15:26:34.016 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 15:26:34.026 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 15:26:34.026 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 15:26:34.029 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 15:26:34.029 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 15:26:34.033 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 15:26:34.273 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:26:34.469 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:26:34.469 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:26:34.470 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 15:26:36.472 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:26:36.476 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:26:36.476 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:26:36.476 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 15:26:40.477 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:26:40.479 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:26:40.479 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:26:40.480 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 15:26:48.481 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:26:48.484 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:26:48.484 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:26:48.484 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:16"
+[2023-12-01 15:27:04.483 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:27:04.485 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:27:04.486 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:27:04.486 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:32"
+[2023-12-01 15:27:36.485 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:27:36.488 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:27:36.488 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:27:36.488 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:28:40.484 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:28:40.487 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:28:40.487 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:28:40.488 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:29:44.491 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:29:59.495 ERR] [Cognite.OpcUa.UAClient] Unexpected service result exception in operation BadRequestTimeout at operation SelectEndpoint. Message: BadRequestTimeout.
+Opc.Ua.ServiceResultException: BadRequestTimeout
+   at Opc.Ua.Bindings.ChannelAsyncOperation`1.End(Int32 timeout, Boolean throwOnError)
+   at Opc.Ua.Bindings.UaSCUaBinaryClientChannel.EndSendRequest(IAsyncResult result)
+   at Opc.Ua.Bindings.UaSCUaBinaryTransportChannel.EndSendRequest(IAsyncResult result)
+   at Opc.Ua.Bindings.UaSCUaBinaryTransportChannel.SendRequest(IServiceRequest request)
+   at Opc.Ua.DiscoveryClient.GetEndpoints(RequestHeader requestHeader, String endpointUrl, StringCollection localeIds, StringCollection profileUris, EndpointDescriptionCollection& endpoints)
+   at Opc.Ua.DiscoveryClient.GetEndpoints(StringCollection profileUris)
+   at Opc.Ua.Client.CoreClientUtils.SelectEndpoint(String discoveryUrl, Boolean useSecurity, Int32 discoverTimeout)
+   at Opc.Ua.Client.CoreClientUtils.SelectEndpoint(String discoveryUrl, Boolean useSecurity)
+   at Cognite.OpcUa.SessionManager.CreateSessionDirect(String endpointUrl) in /build/Extractor/SessionManager.cs:line 250
+[2023-12-01 15:29:59.507 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:32:06.868 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 15:32:07.034 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 15:32:07.037 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 15:32:07.047 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 15:32:07.047 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 15:32:07.050 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 15:32:07.050 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 15:32:07.054 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 15:32:07.256 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:32:07.438 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:32:07.438 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:32:07.439 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 15:32:09.441 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:32:09.444 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:32:09.444 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:32:09.445 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 15:32:13.445 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:32:13.447 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:32:13.448 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:32:13.448 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 15:32:21.449 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:32:21.451 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:32:21.452 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:32:21.452 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:16"
+[2023-12-01 15:32:37.452 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:32:37.454 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:32:37.454 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:32:37.454 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:32"
+[2023-12-01 15:33:09.454 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:33:09.456 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:33:09.456 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:33:09.457 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:34:13.460 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:34:13.462 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:34:13.463 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:34:13.463 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:42:46.570 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 15:42:46.717 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 15:42:46.720 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 15:42:46.730 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 15:42:46.730 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 15:42:46.733 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 15:42:46.733 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 15:42:46.736 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 15:42:47.096 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:42:47.300 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:42:47.300 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:42:47.301 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 15:42:49.303 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:42:49.306 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:42:49.307 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:42:49.307 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 15:42:53.308 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:42:53.310 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:42:53.310 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:42:53.310 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 15:43:01.311 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:43:01.313 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:43:01.313 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:43:01.313 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:16"
+[2023-12-01 15:43:17.315 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:43:17.317 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:43:17.317 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:43:17.318 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:32"
+[2023-12-01 15:43:49.317 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:43:49.320 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:43:49.320 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:43:49.320 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:44:53.322 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:44:53.325 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:44:53.325 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:44:53.326 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:45:57.323 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:45:57.325 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:45:57.325 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:45:57.325 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:47:01.327 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:47:01.329 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:47:01.330 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:47:01.330 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:48:05.331 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:48:05.391 INF] [Cognite.OpcUa.UAClient] Attempt to connect to endpoint at opc.tcp://emerson-nodered:4840/ with security: http://opcfoundation.org/UA/SecurityPolicy#None using user identity Anonymous
+[2023-12-01 15:48:05.646 INF] [Cognite.OpcUa.UAClient] Successfully connected to server
+[2023-12-01 15:48:05.655 INF] [Cognite.OpcUa.UAClient] Successfully connected to server at opc.tcp://emerson-nodered:4840/
+[2023-12-01 15:48:05.663 INF] [Cognite.OpcUa.ServerInfoHelper] Reading values from server configuration to determine upper limits
+[2023-12-01 15:48:05.670 VRB] [Cognite.OpcUa.UAClient] Run task read for  attempt 1/5. Elapsed: "00:00:00.0000009"
+[2023-12-01 15:48:05.684 DBG] [Cognite.OpcUa.UAClient] Read 7 / 7 attributes
+[2023-12-01 15:48:05.684 INF] [Cognite.OpcUa.UAClient] Read 7 attributes with 1 operations for 7 nodes
+[2023-12-01 15:48:05.689 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on browse node parallelism by the server, the extractor will continue with 0
+[2023-12-01 15:48:05.690 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on history node parallelism by the server, the extractor will continue with 0
+[2023-12-01 15:48:05.690 INF] [Cognite.OpcUa.ServerInfoHelper] Upper limit on browse nodes chunk is 2000, but configured to 1000
+[2023-12-01 15:48:05.690 INF] [Cognite.OpcUa.ServerInfoHelper] Max attribute read chunk is restricted to 1000
+[2023-12-01 15:48:05.693 INF] [Cognite.OpcUa.UAExtractor] Begin mapping main directory
+[2023-12-01 15:48:05.695 DBG] [Cognite.OpcUa.Browse.Browser] Browse node tree for nodes i=85
+[2023-12-01 15:48:05.699 VRB] [Cognite.OpcUa.UAClient] Run task read for  for root nodes attempt 1/5. Elapsed: "00:00:00.0000006"
+[2023-12-01 15:48:05.702 DBG] [Cognite.OpcUa.UAClient] Read 4 / 4 attributes for root nodes
+[2023-12-01 15:48:05.702 INF] [Cognite.OpcUa.UAClient] Read 4 attributes with 1 operations for 1 nodes for root nodes
+[2023-12-01 15:48:05.713 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Objects, i=85: "Object"
+[2023-12-01 15:48:05.722 INF] [Cognite.OpcUa.Browse.Browser] Begin browsing 1 nodes for the main instance hierarchy
+[2023-12-01 15:48:05.724 DBG] [Cognite.OpcUa.Browse.Browser] Browse node hierarchy for the main instance hierarchy for i=85
+[2023-12-01 15:48:05.739 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000014"
+[2023-12-01 15:48:05.742 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000007"
+[2023-12-01 15:48:05.762 VRB] [Cognite.OpcUa.Browse.Browser] Read 2 children from node i=85 for the main instance hierarchy
+[2023-12-01 15:48:05.763 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 1 total operations. 1/1
+[2023-12-01 15:48:05.769 INF] [Cognite.OpcUa.Browse.Browser] Browsed a total of 1 nodes in 1 operations, and found 1 nodes total for the main instance hierarchy
+[2023-12-01 15:48:05.769 DBG] [Cognite.OpcUa.Browse.Browser] Total results for the main instance hierarchy by depth:
+    0: 1
+
+[2023-12-01 15:48:05.779 VRB] [Cognite.OpcUa.UAClient] Run task read for  for node hierarchy information attempt 1/5. Elapsed: "00:00:00.0000002"
+[2023-12-01 15:48:05.782 DBG] [Cognite.OpcUa.UAClient] Read 1 / 1 attributes for node hierarchy information
+[2023-12-01 15:48:05.782 INF] [Cognite.OpcUa.UAClient] Read 1 attributes with 1 operations for 1 nodes for node hierarchy information
+[2023-12-01 15:48:05.783 INF] [Cognite.OpcUa.UAClient] Retrieved 1/1 core attributes for 1 nodes
+[2023-12-01 15:48:05.793 INF] [Cognite.OpcUa.TypeCollectors.TypeManager] Building type information from nodes in memory
+[2023-12-01 15:48:05.798 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: Objects
+    Id: i=85
+    ObjectType: 
+        Id: i=0
+
+[2023-12-01 15:48:05.801 INF] [Cognite.OpcUa.NodeSources.UANodeSource] Mapping resulted in 1 destination objects and 0 destination timeseries, 1 objects and 0 variables.
+[2023-12-01 15:48:05.802 INF] [Cognite.OpcUa.UAExtractor] End mapping main directory
+[2023-12-01 15:48:05.810 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.Pushers.CDFPusher
+[2023-12-01 15:48:05.812 INF] [Cognite.OpcUa.Pushers.CDFPusher] Testing 1 nodes against CDF
+[2023-12-01 15:48:05.938 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.InfluxPusher
+[2023-12-01 15:48:05.944 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.InfluxPusher true
+[2023-12-01 15:48:05.944 INF] [Cognite.OpcUa.UAExtractor] Waiting for pushes on pushers
+[2023-12-01 15:48:06.802 DBG] [Cognite.Extensions.IAuthenticator] New OIDC token. Expires on 2023-12-01 16:48:05.791
+[2023-12-01 15:48:07.278 DBG] [CogniteSdk.Client] CDF (DataSets:retrieve): POST https://az-eastus-1.cognitedata.com/api/v1/projects/celanese-dev/datasets/byids - 428 ms
+[2023-12-01 15:48:07.294 INF] [Cognite.Extractor.Utils.CogniteDestination] Getting or creating 0 time series in CDF
+[2023-12-01 15:48:07.302 INF] [Cognite.OpcUa.Pushers.CDFPusher] Finish pushing nodes to CDF
+[2023-12-01 15:48:07.304 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.Pushers.CDFPusher true
+[2023-12-01 15:48:07.306 INF] [Cognite.OpcUa.UAExtractor] Synchronize 0 nodes
+[2023-12-01 15:49:31.543 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 15:49:31.693 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 15:49:31.696 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 15:49:31.706 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 15:49:31.706 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 15:49:31.709 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 15:49:31.709 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 15:49:31.712 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 15:49:31.967 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:49:32.162 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:49:32.162 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:49:32.164 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 15:49:34.165 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:49:34.169 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:49:34.169 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:49:34.169 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 15:49:38.170 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:49:38.172 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:49:38.172 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:49:38.173 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 15:49:46.173 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:49:46.176 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:49:46.176 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:49:46.177 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:16"
+[2023-12-01 15:50:02.176 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:50:02.178 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:50:02.179 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:50:02.179 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:32"
+[2023-12-01 15:50:34.179 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:50:34.181 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:50:34.181 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:50:34.182 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:51:38.182 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:51:38.185 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:51:38.185 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:51:38.185 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:52:42.187 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:52:42.189 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:52:42.189 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:52:42.189 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:53:46.192 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:53:46.194 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:53:46.194 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:53:46.194 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:54:50.195 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:54:50.197 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:54:50.197 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:54:50.198 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:55:54.199 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:55:54.201 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:55:54.202 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:55:54.202 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:56:58.203 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:56:58.205 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:56:58.205 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:56:58.206 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:58:02.205 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:58:02.207 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 15:58:02.208 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 15:58:02.208 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 15:59:06.211 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 15:59:06.275 INF] [Cognite.OpcUa.UAClient] Attempt to connect to endpoint at opc.tcp://emerson-nodered:4840/ with security: http://opcfoundation.org/UA/SecurityPolicy#None using user identity Anonymous
+[2023-12-01 15:59:06.547 INF] [Cognite.OpcUa.UAClient] Successfully connected to server
+[2023-12-01 15:59:06.557 INF] [Cognite.OpcUa.UAClient] Successfully connected to server at opc.tcp://emerson-nodered:4840/
+[2023-12-01 15:59:06.567 INF] [Cognite.OpcUa.ServerInfoHelper] Reading values from server configuration to determine upper limits
+[2023-12-01 15:59:06.574 VRB] [Cognite.OpcUa.UAClient] Run task read for  attempt 1/5. Elapsed: "00:00:00.0000006"
+[2023-12-01 15:59:06.588 DBG] [Cognite.OpcUa.UAClient] Read 7 / 7 attributes
+[2023-12-01 15:59:06.589 INF] [Cognite.OpcUa.UAClient] Read 7 attributes with 1 operations for 7 nodes
+[2023-12-01 15:59:06.595 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on browse node parallelism by the server, the extractor will continue with 0
+[2023-12-01 15:59:06.595 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on history node parallelism by the server, the extractor will continue with 0
+[2023-12-01 15:59:06.595 INF] [Cognite.OpcUa.ServerInfoHelper] Upper limit on browse nodes chunk is 2000, but configured to 1000
+[2023-12-01 15:59:06.595 INF] [Cognite.OpcUa.ServerInfoHelper] Max attribute read chunk is restricted to 1000
+[2023-12-01 15:59:06.598 INF] [Cognite.OpcUa.UAExtractor] Begin mapping main directory
+[2023-12-01 15:59:06.601 DBG] [Cognite.OpcUa.Browse.Browser] Browse node tree for nodes i=85
+[2023-12-01 15:59:06.605 VRB] [Cognite.OpcUa.UAClient] Run task read for  for root nodes attempt 1/5. Elapsed: "00:00:00.0000008"
+[2023-12-01 15:59:06.608 DBG] [Cognite.OpcUa.UAClient] Read 4 / 4 attributes for root nodes
+[2023-12-01 15:59:06.609 INF] [Cognite.OpcUa.UAClient] Read 4 attributes with 1 operations for 1 nodes for root nodes
+[2023-12-01 15:59:06.618 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Objects, i=85: "Object"
+[2023-12-01 15:59:06.629 INF] [Cognite.OpcUa.Browse.Browser] Begin browsing 1 nodes for the main instance hierarchy
+[2023-12-01 15:59:06.631 DBG] [Cognite.OpcUa.Browse.Browser] Browse node hierarchy for the main instance hierarchy for i=85
+[2023-12-01 15:59:06.648 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000013"
+[2023-12-01 15:59:06.651 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000011"
+[2023-12-01 15:59:06.673 VRB] [Cognite.OpcUa.Browse.Browser] Read 3 children from node i=85 for the main instance hierarchy
+[2023-12-01 15:59:06.674 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node UPS, ns=1;s=UPS: "Object"
+[2023-12-01 15:59:06.676 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 1 total operations. 1/2
+[2023-12-01 15:59:06.677 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000007"
+[2023-12-01 15:59:06.677 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000004"
+[2023-12-01 15:59:06.683 VRB] [Cognite.OpcUa.Browse.Browser] Read 3 children from node ns=1;s=UPS for the main instance hierarchy
+[2023-12-01 15:59:06.685 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node UPS Status, ns=1;s=UPSStatus: "Variable"
+[2023-12-01 15:59:06.685 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Alarms, ns=1;s=UPSAlarms: "Variable"
+[2023-12-01 15:59:06.685 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Warnings, ns=1;s=UPSWarnings: "Variable"
+[2023-12-01 15:59:06.685 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 2 total operations. 2/5
+[2023-12-01 15:59:06.685 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000005"
+[2023-12-01 15:59:06.686 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000002"
+[2023-12-01 15:59:06.688 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 5 total operations. 5/5
+[2023-12-01 15:59:06.694 INF] [Cognite.OpcUa.Browse.Browser] Browsed a total of 5 nodes in 3 operations, and found 5 nodes total for the main instance hierarchy
+[2023-12-01 15:59:06.694 DBG] [Cognite.OpcUa.Browse.Browser] Total results for the main instance hierarchy by depth:
+    0: 1
+    1: 1
+    2: 3
+
+[2023-12-01 15:59:06.706 VRB] [Cognite.OpcUa.UAClient] Run task read for  for node hierarchy information attempt 1/5. Elapsed: "00:00:00.0000003"
+[2023-12-01 15:59:06.710 DBG] [Cognite.OpcUa.UAClient] Read 17 / 17 attributes for node hierarchy information
+[2023-12-01 15:59:06.710 INF] [Cognite.OpcUa.UAClient] Read 17 attributes with 1 operations for 5 nodes for node hierarchy information
+[2023-12-01 15:59:06.711 INF] [Cognite.OpcUa.UAClient] Retrieved 17/17 core attributes for 5 nodes
+[2023-12-01 15:59:06.721 INF] [Cognite.OpcUa.TypeCollectors.TypeManager] Building type information from nodes in memory
+[2023-12-01 15:59:06.726 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: Objects
+    Id: i=85
+    ObjectType: 
+        Id: i=0
+
+[2023-12-01 15:59:06.726 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: UPS
+    Id: ns=1;s=UPS
+    Parent: Objects i=85
+    ObjectType: 
+        Id: i=61
+
+[2023-12-01 15:59:06.728 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: UPS Status
+    Id: ns=1;s=UPSStatus
+    Parent: UPS ns=1;s=UPS
+    DataType: 
+        Id: i=6
+        IsString: False
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 15:59:06.729 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Alarms
+    Id: ns=1;s=UPSAlarms
+    Parent: UPS ns=1;s=UPS
+    DataType: 
+        Id: i=6
+        IsString: False
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 15:59:06.729 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Variable: Warnings
+    Id: ns=1;s=UPSWarnings
+    Parent: UPS ns=1;s=UPS
+    DataType: 
+        Id: i=6
+        IsString: False
+    VariableType: 
+        Id: i=63
+
+[2023-12-01 15:59:06.734 INF] [Cognite.OpcUa.NodeSources.UANodeSource] Mapping resulted in 2 destination objects and 3 destination timeseries, 2 objects and 3 variables.
+[2023-12-01 15:59:06.734 INF] [Cognite.OpcUa.UAExtractor] End mapping main directory
+[2023-12-01 15:59:06.742 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.Pushers.CDFPusher
+[2023-12-01 15:59:06.744 INF] [Cognite.OpcUa.Pushers.CDFPusher] Testing 5 nodes against CDF
+[2023-12-01 15:59:06.864 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.InfluxPusher
+[2023-12-01 15:59:06.869 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.InfluxPusher true
+[2023-12-01 15:59:06.870 INF] [Cognite.OpcUa.UAExtractor] Waiting for pushes on pushers
+[2023-12-01 15:59:07.820 DBG] [Cognite.Extensions.IAuthenticator] New OIDC token. Expires on 2023-12-01 16:59:06.809
+[2023-12-01 15:59:08.286 DBG] [CogniteSdk.Client] CDF (DataSets:retrieve): POST https://az-eastus-1.cognitedata.com/api/v1/projects/celanese-dev/datasets/byids - 417 ms
+[2023-12-01 15:59:08.301 INF] [Cognite.Extractor.Utils.CogniteDestination] Getting or creating 3 time series in CDF
+[2023-12-01 15:59:08.303 DBG] [CogniteSdk.Client] Getting or creating time series. Number of external ids: 3. Number of chunks: 1
+[2023-12-01 15:59:08.554 DBG] [Cognite.Extensions.IAuthenticator] New OIDC token. Expires on 2023-12-01 16:59:07.554
+[2023-12-01 15:59:08.697 DBG] [CogniteSdk.Client] CDF (TimeSeries:retrieve): POST https://az-eastus-1.cognitedata.com/api/v1/projects/celanese-dev/timeseries/byids - 124 ms
+[2023-12-01 15:59:08.699 DBG] [CogniteSdk.Client] Retrieved 0 times series from CDF
+[2023-12-01 15:59:08.700 DBG] [CogniteSdk.Client] Could not fetch 3 out of 3 time series. Attempting to create the missing ones
+[2023-12-01 15:59:08.903 DBG] [CogniteSdk.Client] CDF (TimeSeries:create): POST https://az-eastus-1.cognitedata.com/api/v1/projects/celanese-dev/timeseries - 171 ms
+[2023-12-01 15:59:08.905 DBG] [CogniteSdk.Client] Created 3 new timeseries in CDF
+[2023-12-01 15:59:08.913 INF] [Cognite.OpcUa.Pushers.Writers.TimeseriesWriter] Request of type "CreateTimeSeries" had 3 results with 0 errors
+[2023-12-01 15:59:08.918 INF] [Cognite.OpcUa.Pushers.CDFPusher] Finish pushing nodes to CDF
+[2023-12-01 15:59:08.920 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.Pushers.CDFPusher true
+[2023-12-01 15:59:08.923 INF] [Cognite.OpcUa.UAExtractor] Synchronize 3 nodes
+[2023-12-01 15:59:08.929 VRB] [Cognite.OpcUa.UAClient] Run task create subscription attempt 1/5. Elapsed: "00:00:00.0000005"
+[2023-12-01 15:59:09.021 DBG] [Cognite.OpcUa.UAClient] Add datapoint subscriptions for 3 nodes, 0 / 3 done.
+[2023-12-01 15:59:09.021 VRB] [Cognite.OpcUa.UAClient] Run task create monitored items attempt 1/5. Elapsed: "00:00:00.0000006"
+[2023-12-01 15:59:09.950 DBG] [Cognite.Extractor.Utils.CogniteDestination] Uploading 3 data points to CDF for 3 time series
+[2023-12-01 15:59:09.962 DBG] [CogniteSdk.Client] Inserting timeseries datapoints. Number of timeseries: 3. Number of chunks: 1
+[2023-12-01 15:59:10.127 DBG] [CogniteSdk.Client] CDF (DataPoints:create): POST https://az-eastus-1.cognitedata.com/api/v1/projects/celanese-dev/timeseries/data - 138 ms
+[2023-12-01 15:59:10.132 DBG] [CogniteSdk.Client] Created 3 datapoints for 3 timeseries in CDF
+[2023-12-01 15:59:10.136 DBG] [Cognite.OpcUa.Pushers.CDFPusher] Successfully pushed 3 / 3 points to CDF
+[2023-12-01 15:59:10.151 DBG] [Cognite.OpcUa.InfluxPusher] Successfully pushed 3 points to influxdb
+[2023-12-01 16:01:18.277 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 16:01:18.598 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 16:01:18.604 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 16:01:18.620 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 16:01:18.620 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 16:01:18.627 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 16:01:18.627 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 16:01:18.634 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 16:01:19.115 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:01:19.422 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:01:19.422 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:01:19.423 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 16:01:21.426 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:01:21.429 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:01:21.429 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:01:21.430 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 16:01:25.430 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:01:25.432 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:01:25.432 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:01:25.433 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 16:01:33.434 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:01:33.512 INF] [Cognite.OpcUa.UAClient] Attempt to connect to endpoint at opc.tcp://emerson-nodered:4840/ with security: http://opcfoundation.org/UA/SecurityPolicy#None using user identity Anonymous
+[2023-12-01 16:01:33.744 INF] [Cognite.OpcUa.UAClient] Successfully connected to server
+[2023-12-01 16:01:33.757 INF] [Cognite.OpcUa.UAClient] Successfully connected to server at opc.tcp://emerson-nodered:4840/
+[2023-12-01 16:01:33.764 INF] [Cognite.OpcUa.ServerInfoHelper] Reading values from server configuration to determine upper limits
+[2023-12-01 16:01:33.770 VRB] [Cognite.OpcUa.UAClient] Run task read for  attempt 1/5. Elapsed: "00:00:00.0000005"
+[2023-12-01 16:01:33.791 DBG] [Cognite.OpcUa.UAClient] Read 7 / 7 attributes
+[2023-12-01 16:01:33.791 INF] [Cognite.OpcUa.UAClient] Read 7 attributes with 1 operations for 7 nodes
+[2023-12-01 16:01:33.798 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on browse node parallelism by the server, the extractor will continue with 0
+[2023-12-01 16:01:33.798 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on history node parallelism by the server, the extractor will continue with 0
+[2023-12-01 16:01:33.799 INF] [Cognite.OpcUa.ServerInfoHelper] Upper limit on browse nodes chunk is 2000, but configured to 1000
+[2023-12-01 16:01:33.799 INF] [Cognite.OpcUa.ServerInfoHelper] Max attribute read chunk is restricted to 1000
+[2023-12-01 16:01:33.802 INF] [Cognite.OpcUa.UAExtractor] Begin mapping main directory
+[2023-12-01 16:01:33.805 DBG] [Cognite.OpcUa.Browse.Browser] Browse node tree for nodes i=85
+[2023-12-01 16:01:33.809 VRB] [Cognite.OpcUa.UAClient] Run task read for  for root nodes attempt 1/5. Elapsed: "00:00:00.0000003"
+[2023-12-01 16:01:33.813 DBG] [Cognite.OpcUa.UAClient] Read 4 / 4 attributes for root nodes
+[2023-12-01 16:01:33.813 INF] [Cognite.OpcUa.UAClient] Read 4 attributes with 1 operations for 1 nodes for root nodes
+[2023-12-01 16:01:33.823 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Objects, i=85: "Object"
+[2023-12-01 16:01:33.831 INF] [Cognite.OpcUa.Browse.Browser] Begin browsing 1 nodes for the main instance hierarchy
+[2023-12-01 16:01:33.833 DBG] [Cognite.OpcUa.Browse.Browser] Browse node hierarchy for the main instance hierarchy for i=85
+[2023-12-01 16:01:33.850 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000019"
+[2023-12-01 16:01:33.854 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000009"
+[2023-12-01 16:01:33.881 VRB] [Cognite.OpcUa.Browse.Browser] Read 2 children from node i=85 for the main instance hierarchy
+[2023-12-01 16:01:33.882 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 1 total operations. 1/1
+[2023-12-01 16:01:33.888 INF] [Cognite.OpcUa.Browse.Browser] Browsed a total of 1 nodes in 1 operations, and found 1 nodes total for the main instance hierarchy
+[2023-12-01 16:01:33.889 DBG] [Cognite.OpcUa.Browse.Browser] Total results for the main instance hierarchy by depth:
+    0: 1
+
+[2023-12-01 16:01:33.899 VRB] [Cognite.OpcUa.UAClient] Run task read for  for node hierarchy information attempt 1/5. Elapsed: "00:00:00.0000003"
+[2023-12-01 16:01:33.901 DBG] [Cognite.OpcUa.UAClient] Read 1 / 1 attributes for node hierarchy information
+[2023-12-01 16:01:33.901 INF] [Cognite.OpcUa.UAClient] Read 1 attributes with 1 operations for 1 nodes for node hierarchy information
+[2023-12-01 16:01:33.902 INF] [Cognite.OpcUa.UAClient] Retrieved 1/1 core attributes for 1 nodes
+[2023-12-01 16:01:33.912 INF] [Cognite.OpcUa.TypeCollectors.TypeManager] Building type information from nodes in memory
+[2023-12-01 16:01:33.916 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: Objects
+    Id: i=85
+    ObjectType: 
+        Id: i=0
+
+[2023-12-01 16:01:33.919 INF] [Cognite.OpcUa.NodeSources.UANodeSource] Mapping resulted in 1 destination objects and 0 destination timeseries, 1 objects and 0 variables.
+[2023-12-01 16:01:33.919 INF] [Cognite.OpcUa.UAExtractor] End mapping main directory
+[2023-12-01 16:01:33.927 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.Pushers.CDFPusher
+[2023-12-01 16:01:33.929 INF] [Cognite.OpcUa.Pushers.CDFPusher] Testing 1 nodes against CDF
+[2023-12-01 16:01:34.056 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.InfluxPusher
+[2023-12-01 16:01:34.062 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.InfluxPusher true
+[2023-12-01 16:01:34.062 INF] [Cognite.OpcUa.UAExtractor] Waiting for pushes on pushers
+[2023-12-01 16:01:35.040 DBG] [Cognite.Extensions.IAuthenticator] New OIDC token. Expires on 2023-12-01 17:01:34.028
+[2023-12-01 16:01:35.514 DBG] [CogniteSdk.Client] CDF (DataSets:retrieve): POST https://az-eastus-1.cognitedata.com/api/v1/projects/celanese-dev/datasets/byids - 421 ms
+[2023-12-01 16:01:35.529 INF] [Cognite.Extractor.Utils.CogniteDestination] Getting or creating 0 time series in CDF
+[2023-12-01 16:01:35.536 INF] [Cognite.OpcUa.Pushers.CDFPusher] Finish pushing nodes to CDF
+[2023-12-01 16:01:35.538 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.Pushers.CDFPusher true
+[2023-12-01 16:01:35.540 INF] [Cognite.OpcUa.UAExtractor] Synchronize 0 nodes
+[2023-12-01 16:04:53.746 WRN] [Cognite.OpcUa.UAClient] Keep alive failed: BadNoCommunication 'Server not responding to keep alive requests.'
+[2023-12-01 16:04:53.746 WRN] [Cognite.OpcUa.UAClient] --- RECONNECTING ---
+[2023-12-01 16:04:58.745 WRN] [Cognite.OpcUa.UAClient] Keep alive failed: BadNoCommunication 'Server not responding to keep alive requests.'
+[2023-12-01 16:04:58.858 WRN] [Cognite.OpcUa.UAClient] --- RECONNECTED ---
+[2023-12-01 16:04:58.866 WRN] [Cognite.OpcUa.UAClient] Missing valid event fields, no results will be returned
+[2023-12-01 16:04:58.870 VRB] [Cognite.OpcUa.UAClient] Run task create subscription attempt 1/5. Elapsed: "00:00:00.0000007"
+[2023-12-01 16:05:53.914 WRN] [Cognite.OpcUa.UAClient] Subscription no longer responding: EventListener. Trying to re-enable.
+[2023-12-01 16:05:53.919 ERR] [Cognite.OpcUa.UAClient] Failed to obtain server state. Server is likely down: 
+[2023-12-01 16:05:58.853 WRN] [Cognite.OpcUa.UAClient] Keep alive failed: BadNoCommunication 'Server not responding to keep alive requests.'
+[2023-12-01 16:05:58.853 WRN] [Cognite.OpcUa.UAClient] --- RECONNECTING ---
+[2023-12-01 16:05:58.909 WRN] [Cognite.OpcUa.UAClient] Subscription no longer responding: EventListener. Trying to re-enable.
+[2023-12-01 16:05:58.911 ERR] [Cognite.OpcUa.UAClient] Failed to obtain server state. Server is likely down: 
+[2023-12-01 16:06:03.856 WRN] [Cognite.OpcUa.UAClient] Keep alive failed: BadNoCommunication 'Server not responding to keep alive requests.'
+[2023-12-01 16:06:03.909 WRN] [Cognite.OpcUa.UAClient] Subscription no longer responding: EventListener. Trying to re-enable.
+[2023-12-01 16:06:03.922 ERR] [Cognite.OpcUa.UAClient] Failed to obtain server state. Server is likely down: 
+[2023-12-01 16:06:03.962 WRN] [Cognite.OpcUa.UAClient] --- RECONNECTED ---
+[2023-12-01 16:06:03.963 WRN] [Cognite.OpcUa.UAClient] Missing valid event fields, no results will be returned
+[2023-12-01 16:06:03.963 VRB] [Cognite.OpcUa.UAClient] Run task create subscription attempt 1/5. Elapsed: "00:00:00.0000011"
+[2023-12-01 16:07:43.960 WRN] [Cognite.OpcUa.UAClient] Subscription no longer responding: EventListener 2. Trying to re-enable.
+[2023-12-01 16:07:43.962 ERR] [Cognite.OpcUa.UAClient] Failed to obtain server state. Server is likely down: 
+[2023-12-01 16:07:48.960 WRN] [Cognite.OpcUa.UAClient] Subscription no longer responding: EventListener 2. Trying to re-enable.
+[2023-12-01 16:07:48.962 ERR] [Cognite.OpcUa.UAClient] Failed to obtain server state. Server is likely down: 
+[2023-12-01 16:07:53.932 WRN] [Cognite.OpcUa.UAClient] Keep alive failed: BadNoCommunication 'Server not responding to keep alive requests.'
+[2023-12-01 16:07:53.932 WRN] [Cognite.OpcUa.UAClient] --- RECONNECTING ---
+[2023-12-01 16:07:53.961 WRN] [Cognite.OpcUa.UAClient] Subscription no longer responding: EventListener 2. Trying to re-enable.
+[2023-12-01 16:07:53.963 ERR] [Cognite.OpcUa.UAClient] Failed to obtain server state. Server is likely down: 
+[2023-12-01 16:07:58.960 WRN] [Cognite.OpcUa.UAClient] Subscription no longer responding: EventListener 2. Trying to re-enable.
+[2023-12-01 16:07:59.013 ERR] [Cognite.OpcUa.UAClient] Failed to obtain server state. Server is likely down: 
+[2023-12-01 16:07:59.052 WRN] [Cognite.OpcUa.UAClient] --- RECONNECTED ---
+[2023-12-01 16:07:59.052 WRN] [Cognite.OpcUa.UAClient] Missing valid event fields, no results will be returned
+[2023-12-01 16:07:59.052 VRB] [Cognite.OpcUa.UAClient] Run task create subscription attempt 1/5. Elapsed: "00:00:00.0000004"
+[2023-12-01 16:10:21.569 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 16:10:21.735 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 16:10:21.738 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 16:10:21.748 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 16:10:21.748 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 16:10:21.751 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 16:10:21.751 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 16:10:21.754 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 16:10:22.048 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:10:22.243 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:10:22.243 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:10:22.244 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 16:10:24.246 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:10:24.249 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:10:24.249 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:10:24.249 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 16:10:28.250 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:10:28.252 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:10:28.253 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:10:28.253 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 16:10:36.254 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:10:36.256 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:10:36.256 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:10:36.257 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:16"
+[2023-12-01 16:10:52.256 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:10:52.258 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:10:52.258 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:10:52.259 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:32"
+[2023-12-01 16:11:24.258 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:11:24.260 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:11:24.260 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:11:24.261 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 16:12:28.264 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:12:28.267 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:12:28.267 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:12:28.268 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 16:13:32.272 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:13:32.354 INF] [Cognite.OpcUa.UAClient] Attempt to connect to endpoint at opc.tcp://emerson-nodered:4840/ with security: http://opcfoundation.org/UA/SecurityPolicy#None using user identity Anonymous
+[2023-12-01 16:13:32.608 INF] [Cognite.OpcUa.UAClient] Successfully connected to server
+[2023-12-01 16:13:32.618 INF] [Cognite.OpcUa.UAClient] Successfully connected to server at opc.tcp://emerson-nodered:4840/
+[2023-12-01 16:13:32.626 INF] [Cognite.OpcUa.ServerInfoHelper] Reading values from server configuration to determine upper limits
+[2023-12-01 16:13:32.632 VRB] [Cognite.OpcUa.UAClient] Run task read for  attempt 1/5. Elapsed: "00:00:00.0000005"
+[2023-12-01 16:13:32.646 DBG] [Cognite.OpcUa.UAClient] Read 7 / 7 attributes
+[2023-12-01 16:13:32.647 INF] [Cognite.OpcUa.UAClient] Read 7 attributes with 1 operations for 7 nodes
+[2023-12-01 16:13:32.652 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on browse node parallelism by the server, the extractor will continue with 0
+[2023-12-01 16:13:32.652 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on history node parallelism by the server, the extractor will continue with 0
+[2023-12-01 16:13:32.653 INF] [Cognite.OpcUa.ServerInfoHelper] Upper limit on browse nodes chunk is 2000, but configured to 1000
+[2023-12-01 16:13:32.653 INF] [Cognite.OpcUa.ServerInfoHelper] Max attribute read chunk is restricted to 1000
+[2023-12-01 16:13:32.656 INF] [Cognite.OpcUa.UAExtractor] Begin mapping main directory
+[2023-12-01 16:13:32.659 DBG] [Cognite.OpcUa.Browse.Browser] Browse node tree for nodes i=85
+[2023-12-01 16:13:32.663 VRB] [Cognite.OpcUa.UAClient] Run task read for  for root nodes attempt 1/5. Elapsed: "00:00:00.0000002"
+[2023-12-01 16:13:32.666 DBG] [Cognite.OpcUa.UAClient] Read 4 / 4 attributes for root nodes
+[2023-12-01 16:13:32.667 INF] [Cognite.OpcUa.UAClient] Read 4 attributes with 1 operations for 1 nodes for root nodes
+[2023-12-01 16:13:32.676 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Objects, i=85: "Object"
+[2023-12-01 16:13:32.683 INF] [Cognite.OpcUa.Browse.Browser] Begin browsing 1 nodes for the main instance hierarchy
+[2023-12-01 16:13:32.685 DBG] [Cognite.OpcUa.Browse.Browser] Browse node hierarchy for the main instance hierarchy for i=85
+[2023-12-01 16:13:32.703 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000041"
+[2023-12-01 16:13:32.707 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000005"
+[2023-12-01 16:13:32.735 VRB] [Cognite.OpcUa.Browse.Browser] Read 2 children from node i=85 for the main instance hierarchy
+[2023-12-01 16:13:32.736 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 1 total operations. 1/1
+[2023-12-01 16:13:32.739 INF] [Cognite.OpcUa.Browse.Browser] Browsed a total of 1 nodes in 1 operations, and found 1 nodes total for the main instance hierarchy
+[2023-12-01 16:13:32.739 DBG] [Cognite.OpcUa.Browse.Browser] Total results for the main instance hierarchy by depth:
+    0: 1
+
+[2023-12-01 16:13:32.749 VRB] [Cognite.OpcUa.UAClient] Run task read for  for node hierarchy information attempt 1/5. Elapsed: "00:00:00.0000003"
+[2023-12-01 16:13:32.751 DBG] [Cognite.OpcUa.UAClient] Read 1 / 1 attributes for node hierarchy information
+[2023-12-01 16:13:32.751 INF] [Cognite.OpcUa.UAClient] Read 1 attributes with 1 operations for 1 nodes for node hierarchy information
+[2023-12-01 16:13:32.752 INF] [Cognite.OpcUa.UAClient] Retrieved 1/1 core attributes for 1 nodes
+[2023-12-01 16:13:32.758 INF] [Cognite.OpcUa.TypeCollectors.TypeManager] Building type information from nodes in memory
+[2023-12-01 16:13:32.762 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: Objects
+    Id: i=85
+    ObjectType: 
+        Id: i=0
+
+[2023-12-01 16:13:32.765 INF] [Cognite.OpcUa.NodeSources.UANodeSource] Mapping resulted in 1 destination objects and 0 destination timeseries, 1 objects and 0 variables.
+[2023-12-01 16:13:32.766 INF] [Cognite.OpcUa.UAExtractor] End mapping main directory
+[2023-12-01 16:13:32.774 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.Pushers.CDFPusher
+[2023-12-01 16:13:32.777 INF] [Cognite.OpcUa.Pushers.CDFPusher] Testing 1 nodes against CDF
+[2023-12-01 16:13:32.900 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.InfluxPusher
+[2023-12-01 16:13:32.905 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.InfluxPusher true
+[2023-12-01 16:13:32.905 INF] [Cognite.OpcUa.UAExtractor] Waiting for pushes on pushers
+[2023-12-01 16:13:33.895 DBG] [Cognite.Extensions.IAuthenticator] New OIDC token. Expires on 2023-12-01 17:13:32.883
+[2023-12-01 16:13:34.368 DBG] [CogniteSdk.Client] CDF (DataSets:retrieve): POST https://az-eastus-1.cognitedata.com/api/v1/projects/celanese-dev/datasets/byids - 420 ms
+[2023-12-01 16:13:34.384 INF] [Cognite.Extractor.Utils.CogniteDestination] Getting or creating 0 time series in CDF
+[2023-12-01 16:13:34.392 INF] [Cognite.OpcUa.Pushers.CDFPusher] Finish pushing nodes to CDF
+[2023-12-01 16:13:34.394 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.Pushers.CDFPusher true
+[2023-12-01 16:13:34.396 INF] [Cognite.OpcUa.UAExtractor] Synchronize 0 nodes
+[2023-12-01 16:16:27.928 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 16:16:28.287 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 16:16:28.292 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 16:16:28.307 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 16:16:28.307 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 16:16:28.312 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 16:16:28.313 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 16:16:28.318 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 16:16:28.815 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:16:29.105 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:16:29.105 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:16:29.107 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 16:16:31.112 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:16:31.116 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:16:31.116 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:16:31.117 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 16:16:35.118 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:16:35.120 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:16:35.120 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:16:35.120 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 16:16:43.122 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:16:43.194 INF] [Cognite.OpcUa.UAClient] Attempt to connect to endpoint at opc.tcp://emerson-nodered:4840/ with security: http://opcfoundation.org/UA/SecurityPolicy#None using user identity Anonymous
+[2023-12-01 16:16:43.410 INF] [Cognite.OpcUa.UAClient] Successfully connected to server
+[2023-12-01 16:16:43.421 INF] [Cognite.OpcUa.UAClient] Successfully connected to server at opc.tcp://emerson-nodered:4840/
+[2023-12-01 16:16:43.428 INF] [Cognite.OpcUa.ServerInfoHelper] Reading values from server configuration to determine upper limits
+[2023-12-01 16:16:43.434 VRB] [Cognite.OpcUa.UAClient] Run task read for  attempt 1/5. Elapsed: "00:00:00.0000008"
+[2023-12-01 16:16:43.453 DBG] [Cognite.OpcUa.UAClient] Read 7 / 7 attributes
+[2023-12-01 16:16:43.454 INF] [Cognite.OpcUa.UAClient] Read 7 attributes with 1 operations for 7 nodes
+[2023-12-01 16:16:43.459 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on browse node parallelism by the server, the extractor will continue with 0
+[2023-12-01 16:16:43.459 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on history node parallelism by the server, the extractor will continue with 0
+[2023-12-01 16:16:43.459 INF] [Cognite.OpcUa.ServerInfoHelper] Upper limit on browse nodes chunk is 2000, but configured to 1000
+[2023-12-01 16:16:43.459 INF] [Cognite.OpcUa.ServerInfoHelper] Max attribute read chunk is restricted to 1000
+[2023-12-01 16:16:43.463 INF] [Cognite.OpcUa.UAExtractor] Begin mapping main directory
+[2023-12-01 16:16:43.466 DBG] [Cognite.OpcUa.Browse.Browser] Browse node tree for nodes i=85
+[2023-12-01 16:16:43.470 VRB] [Cognite.OpcUa.UAClient] Run task read for  for root nodes attempt 1/5. Elapsed: "00:00:00.0000002"
+[2023-12-01 16:16:43.473 DBG] [Cognite.OpcUa.UAClient] Read 4 / 4 attributes for root nodes
+[2023-12-01 16:16:43.473 INF] [Cognite.OpcUa.UAClient] Read 4 attributes with 1 operations for 1 nodes for root nodes
+[2023-12-01 16:16:43.482 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Objects, i=85: "Object"
+[2023-12-01 16:16:43.491 INF] [Cognite.OpcUa.Browse.Browser] Begin browsing 1 nodes for the main instance hierarchy
+[2023-12-01 16:16:43.493 DBG] [Cognite.OpcUa.Browse.Browser] Browse node hierarchy for the main instance hierarchy for i=85
+[2023-12-01 16:16:43.506 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000010"
+[2023-12-01 16:16:43.508 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000005"
+[2023-12-01 16:16:43.528 VRB] [Cognite.OpcUa.Browse.Browser] Read 2 children from node i=85 for the main instance hierarchy
+[2023-12-01 16:16:43.529 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 1 total operations. 1/1
+[2023-12-01 16:16:43.535 INF] [Cognite.OpcUa.Browse.Browser] Browsed a total of 1 nodes in 1 operations, and found 1 nodes total for the main instance hierarchy
+[2023-12-01 16:16:43.535 DBG] [Cognite.OpcUa.Browse.Browser] Total results for the main instance hierarchy by depth:
+    0: 1
+
+[2023-12-01 16:16:43.546 VRB] [Cognite.OpcUa.UAClient] Run task read for  for node hierarchy information attempt 1/5. Elapsed: "00:00:00.0000006"
+[2023-12-01 16:16:43.549 DBG] [Cognite.OpcUa.UAClient] Read 1 / 1 attributes for node hierarchy information
+[2023-12-01 16:16:43.549 INF] [Cognite.OpcUa.UAClient] Read 1 attributes with 1 operations for 1 nodes for node hierarchy information
+[2023-12-01 16:16:43.550 INF] [Cognite.OpcUa.UAClient] Retrieved 1/1 core attributes for 1 nodes
+[2023-12-01 16:16:43.559 INF] [Cognite.OpcUa.TypeCollectors.TypeManager] Building type information from nodes in memory
+[2023-12-01 16:16:43.564 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: Objects
+    Id: i=85
+    ObjectType: 
+        Id: i=0
+
+[2023-12-01 16:16:43.567 INF] [Cognite.OpcUa.NodeSources.UANodeSource] Mapping resulted in 1 destination objects and 0 destination timeseries, 1 objects and 0 variables.
+[2023-12-01 16:16:43.567 INF] [Cognite.OpcUa.UAExtractor] End mapping main directory
+[2023-12-01 16:16:43.574 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.Pushers.CDFPusher
+[2023-12-01 16:16:43.576 INF] [Cognite.OpcUa.Pushers.CDFPusher] Testing 1 nodes against CDF
+[2023-12-01 16:16:43.703 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.InfluxPusher
+[2023-12-01 16:16:43.709 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.InfluxPusher true
+[2023-12-01 16:16:43.709 INF] [Cognite.OpcUa.UAExtractor] Waiting for pushes on pushers
+[2023-12-01 16:16:44.598 DBG] [Cognite.Extensions.IAuthenticator] New OIDC token. Expires on 2023-12-01 17:16:43.586
+[2023-12-01 16:16:45.060 DBG] [CogniteSdk.Client] CDF (DataSets:retrieve): POST https://az-eastus-1.cognitedata.com/api/v1/projects/celanese-dev/datasets/byids - 410 ms
+[2023-12-01 16:16:45.075 INF] [Cognite.Extractor.Utils.CogniteDestination] Getting or creating 0 time series in CDF
+[2023-12-01 16:16:45.082 INF] [Cognite.OpcUa.Pushers.CDFPusher] Finish pushing nodes to CDF
+[2023-12-01 16:16:45.085 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.Pushers.CDFPusher true
+[2023-12-01 16:16:45.086 INF] [Cognite.OpcUa.UAExtractor] Synchronize 0 nodes
+[2023-12-01 16:17:58.409 WRN] [Cognite.OpcUa.UAClient] Keep alive failed: BadNoCommunication 'Server not responding to keep alive requests.'
+[2023-12-01 16:17:58.409 WRN] [Cognite.OpcUa.UAClient] --- RECONNECTING ---
+[2023-12-01 16:18:03.406 WRN] [Cognite.OpcUa.UAClient] Keep alive failed: BadNoCommunication 'Server not responding to keep alive requests.'
+[2023-12-01 16:18:03.519 WRN] [Cognite.OpcUa.UAClient] --- RECONNECTED ---
+[2023-12-01 16:18:03.525 WRN] [Cognite.OpcUa.UAClient] Missing valid event fields, no results will be returned
+[2023-12-01 16:18:03.527 VRB] [Cognite.OpcUa.UAClient] Run task create subscription attempt 1/5. Elapsed: "00:00:00.0000014"
+[2023-12-01 16:20:22.206 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 16:20:22.357 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 16:20:22.360 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 16:20:22.370 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 16:20:22.371 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 16:20:22.374 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 16:20:22.374 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 16:20:22.378 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 16:20:22.575 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:20:22.807 INF] [Cognite.OpcUa.UAClient] Attempt to connect to endpoint at opc.tcp://emerson-nodered:4840/ with security: http://opcfoundation.org/UA/SecurityPolicy#None using user identity Anonymous
+[2023-12-01 16:20:23.031 INF] [Cognite.OpcUa.UAClient] Successfully connected to server
+[2023-12-01 16:20:23.043 INF] [Cognite.OpcUa.UAClient] Successfully connected to server at opc.tcp://emerson-nodered:4840/
+[2023-12-01 16:20:23.060 INF] [Cognite.OpcUa.ServerInfoHelper] Reading values from server configuration to determine upper limits
+[2023-12-01 16:20:23.066 VRB] [Cognite.OpcUa.UAClient] Run task read for  attempt 1/5. Elapsed: "00:00:00.0000009"
+[2023-12-01 16:20:23.078 DBG] [Cognite.OpcUa.UAClient] Read 7 / 7 attributes
+[2023-12-01 16:20:23.079 INF] [Cognite.OpcUa.UAClient] Read 7 attributes with 1 operations for 7 nodes
+[2023-12-01 16:20:23.084 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on browse node parallelism by the server, the extractor will continue with 0
+[2023-12-01 16:20:23.084 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on history node parallelism by the server, the extractor will continue with 0
+[2023-12-01 16:20:23.085 INF] [Cognite.OpcUa.ServerInfoHelper] Upper limit on browse nodes chunk is 2000, but configured to 1000
+[2023-12-01 16:20:23.085 INF] [Cognite.OpcUa.ServerInfoHelper] Max attribute read chunk is restricted to 1000
+[2023-12-01 16:20:23.090 INF] [Cognite.OpcUa.UAExtractor] Begin mapping main directory
+[2023-12-01 16:20:23.093 DBG] [Cognite.OpcUa.Browse.Browser] Browse node tree for nodes i=85
+[2023-12-01 16:20:23.097 VRB] [Cognite.OpcUa.UAClient] Run task read for  for root nodes attempt 1/5. Elapsed: "00:00:00.0000004"
+[2023-12-01 16:20:23.100 DBG] [Cognite.OpcUa.UAClient] Read 4 / 4 attributes for root nodes
+[2023-12-01 16:20:23.101 INF] [Cognite.OpcUa.UAClient] Read 4 attributes with 1 operations for 1 nodes for root nodes
+[2023-12-01 16:20:23.107 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Objects, i=85: "Object"
+[2023-12-01 16:20:23.115 INF] [Cognite.OpcUa.Browse.Browser] Begin browsing 1 nodes for the main instance hierarchy
+[2023-12-01 16:20:23.117 DBG] [Cognite.OpcUa.Browse.Browser] Browse node hierarchy for the main instance hierarchy for i=85
+[2023-12-01 16:20:23.131 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000009"
+[2023-12-01 16:20:23.135 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000004"
+[2023-12-01 16:20:23.156 VRB] [Cognite.OpcUa.Browse.Browser] Read 2 children from node i=85 for the main instance hierarchy
+[2023-12-01 16:20:23.157 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 1 total operations. 1/1
+[2023-12-01 16:20:23.160 INF] [Cognite.OpcUa.Browse.Browser] Browsed a total of 1 nodes in 1 operations, and found 1 nodes total for the main instance hierarchy
+[2023-12-01 16:20:23.160 DBG] [Cognite.OpcUa.Browse.Browser] Total results for the main instance hierarchy by depth:
+    0: 1
+
+[2023-12-01 16:20:23.170 VRB] [Cognite.OpcUa.UAClient] Run task read for  for node hierarchy information attempt 1/5. Elapsed: "00:00:00.0000003"
+[2023-12-01 16:20:23.172 DBG] [Cognite.OpcUa.UAClient] Read 1 / 1 attributes for node hierarchy information
+[2023-12-01 16:20:23.172 INF] [Cognite.OpcUa.UAClient] Read 1 attributes with 1 operations for 1 nodes for node hierarchy information
+[2023-12-01 16:20:23.173 INF] [Cognite.OpcUa.UAClient] Retrieved 1/1 core attributes for 1 nodes
+[2023-12-01 16:20:23.177 INF] [Cognite.OpcUa.TypeCollectors.TypeManager] Building type information from nodes in memory
+[2023-12-01 16:20:23.181 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: Objects
+    Id: i=85
+    ObjectType: 
+        Id: i=0
+
+[2023-12-01 16:20:23.184 INF] [Cognite.OpcUa.NodeSources.UANodeSource] Mapping resulted in 1 destination objects and 0 destination timeseries, 1 objects and 0 variables.
+[2023-12-01 16:20:23.184 INF] [Cognite.OpcUa.UAExtractor] End mapping main directory
+[2023-12-01 16:20:23.191 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.Pushers.CDFPusher
+[2023-12-01 16:20:23.193 INF] [Cognite.OpcUa.Pushers.CDFPusher] Testing 1 nodes against CDF
+[2023-12-01 16:20:23.314 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.InfluxPusher
+[2023-12-01 16:20:23.320 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.InfluxPusher true
+[2023-12-01 16:20:23.320 INF] [Cognite.OpcUa.UAExtractor] Waiting for pushes on pushers
+[2023-12-01 16:20:24.186 DBG] [Cognite.Extensions.IAuthenticator] New OIDC token. Expires on 2023-12-01 17:20:23.175
+[2023-12-01 16:20:24.664 DBG] [CogniteSdk.Client] CDF (DataSets:retrieve): POST https://az-eastus-1.cognitedata.com/api/v1/projects/celanese-dev/datasets/byids - 429 ms
+[2023-12-01 16:20:24.679 INF] [Cognite.Extractor.Utils.CogniteDestination] Getting or creating 0 time series in CDF
+[2023-12-01 16:20:24.686 INF] [Cognite.OpcUa.Pushers.CDFPusher] Finish pushing nodes to CDF
+[2023-12-01 16:20:24.689 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.Pushers.CDFPusher true
+[2023-12-01 16:20:24.691 INF] [Cognite.OpcUa.UAExtractor] Synchronize 0 nodes
+[2023-12-01 16:25:16.294 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 16:25:16.443 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+extraction:
+    id-prefix: 'gp:'
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 16:25:16.446 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 16:25:16.455 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 16:25:16.456 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 16:25:16.459 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 16:25:16.459 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 16:25:16.462 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 16:25:16.673 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:25:16.896 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:25:16.897 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:25:16.898 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 16:25:18.900 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:25:18.909 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:25:18.909 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:25:18.910 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 16:25:22.914 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:25:22.922 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:25:22.922 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:25:22.923 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 16:25:30.923 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:25:30.931 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:25:30.931 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:25:30.932 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:16"
+[2023-12-01 16:25:46.934 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:25:46.942 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:25:46.942 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:25:46.942 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:32"
+[2023-12-01 16:26:18.944 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:26:18.953 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:26:18.953 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:26:18.954 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:01:04"
+[2023-12-01 16:27:22.957 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:27:23.035 INF] [Cognite.OpcUa.UAClient] Attempt to connect to endpoint at opc.tcp://emerson-nodered:4840/ with security: http://opcfoundation.org/UA/SecurityPolicy#None using user identity Anonymous
+[2023-12-01 16:27:23.281 INF] [Cognite.OpcUa.UAClient] Successfully connected to server
+[2023-12-01 16:27:23.292 INF] [Cognite.OpcUa.UAClient] Successfully connected to server at opc.tcp://emerson-nodered:4840/
+[2023-12-01 16:27:23.299 INF] [Cognite.OpcUa.ServerInfoHelper] Reading values from server configuration to determine upper limits
+[2023-12-01 16:27:23.305 VRB] [Cognite.OpcUa.UAClient] Run task read for  attempt 1/5. Elapsed: "00:00:00.0000006"
+[2023-12-01 16:27:23.319 DBG] [Cognite.OpcUa.UAClient] Read 7 / 7 attributes
+[2023-12-01 16:27:23.320 INF] [Cognite.OpcUa.UAClient] Read 7 attributes with 1 operations for 7 nodes
+[2023-12-01 16:27:23.326 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on browse node parallelism by the server, the extractor will continue with 0
+[2023-12-01 16:27:23.326 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on history node parallelism by the server, the extractor will continue with 0
+[2023-12-01 16:27:23.326 INF] [Cognite.OpcUa.ServerInfoHelper] Upper limit on browse nodes chunk is 2000, but configured to 1000
+[2023-12-01 16:27:23.327 INF] [Cognite.OpcUa.ServerInfoHelper] Max attribute read chunk is restricted to 1000
+[2023-12-01 16:27:23.330 INF] [Cognite.OpcUa.UAExtractor] Begin mapping main directory
+[2023-12-01 16:27:23.333 DBG] [Cognite.OpcUa.Browse.Browser] Browse node tree for nodes i=85
+[2023-12-01 16:27:23.337 VRB] [Cognite.OpcUa.UAClient] Run task read for  for root nodes attempt 1/5. Elapsed: "00:00:00.0000005"
+[2023-12-01 16:27:23.341 DBG] [Cognite.OpcUa.UAClient] Read 4 / 4 attributes for root nodes
+[2023-12-01 16:27:23.341 INF] [Cognite.OpcUa.UAClient] Read 4 attributes with 1 operations for 1 nodes for root nodes
+[2023-12-01 16:27:23.347 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Objects, i=85: "Object"
+[2023-12-01 16:27:23.354 INF] [Cognite.OpcUa.Browse.Browser] Begin browsing 1 nodes for the main instance hierarchy
+[2023-12-01 16:27:23.355 DBG] [Cognite.OpcUa.Browse.Browser] Browse node hierarchy for the main instance hierarchy for i=85
+[2023-12-01 16:27:23.374 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000053"
+[2023-12-01 16:27:23.378 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000008"
+[2023-12-01 16:27:23.401 VRB] [Cognite.OpcUa.Browse.Browser] Read 2 children from node i=85 for the main instance hierarchy
+[2023-12-01 16:27:23.402 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 1 total operations. 1/1
+[2023-12-01 16:27:23.406 INF] [Cognite.OpcUa.Browse.Browser] Browsed a total of 1 nodes in 1 operations, and found 1 nodes total for the main instance hierarchy
+[2023-12-01 16:27:23.406 DBG] [Cognite.OpcUa.Browse.Browser] Total results for the main instance hierarchy by depth:
+    0: 1
+
+[2023-12-01 16:27:23.420 VRB] [Cognite.OpcUa.UAClient] Run task read for  for node hierarchy information attempt 1/5. Elapsed: "00:00:00.0000004"
+[2023-12-01 16:27:23.422 DBG] [Cognite.OpcUa.UAClient] Read 1 / 1 attributes for node hierarchy information
+[2023-12-01 16:27:23.422 INF] [Cognite.OpcUa.UAClient] Read 1 attributes with 1 operations for 1 nodes for node hierarchy information
+[2023-12-01 16:27:23.423 INF] [Cognite.OpcUa.UAClient] Retrieved 1/1 core attributes for 1 nodes
+[2023-12-01 16:27:23.432 INF] [Cognite.OpcUa.TypeCollectors.TypeManager] Building type information from nodes in memory
+[2023-12-01 16:27:23.437 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: Objects
+    Id: i=85
+    ObjectType: 
+        Id: i=0
+
+[2023-12-01 16:27:23.440 INF] [Cognite.OpcUa.NodeSources.UANodeSource] Mapping resulted in 1 destination objects and 0 destination timeseries, 1 objects and 0 variables.
+[2023-12-01 16:27:23.440 INF] [Cognite.OpcUa.UAExtractor] End mapping main directory
+[2023-12-01 16:27:23.448 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.Pushers.CDFPusher
+[2023-12-01 16:27:23.451 INF] [Cognite.OpcUa.Pushers.CDFPusher] Testing 1 nodes against CDF
+[2023-12-01 16:27:23.571 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.InfluxPusher
+[2023-12-01 16:27:23.578 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.InfluxPusher true
+[2023-12-01 16:27:23.578 INF] [Cognite.OpcUa.UAExtractor] Waiting for pushes on pushers
+[2023-12-01 16:27:24.351 DBG] [Cognite.Extensions.IAuthenticator] New OIDC token. Expires on 2023-12-01 17:27:23.339
+[2023-12-01 16:27:24.817 DBG] [CogniteSdk.Client] CDF (DataSets:retrieve): POST https://az-eastus-1.cognitedata.com/api/v1/projects/celanese-dev/datasets/byids - 418 ms
+[2023-12-01 16:27:24.832 INF] [Cognite.Extractor.Utils.CogniteDestination] Getting or creating 0 time series in CDF
+[2023-12-01 16:27:24.839 INF] [Cognite.OpcUa.Pushers.CDFPusher] Finish pushing nodes to CDF
+[2023-12-01 16:27:24.842 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.Pushers.CDFPusher true
+[2023-12-01 16:27:24.843 INF] [Cognite.OpcUa.UAExtractor] Synchronize 0 nodes
+[2023-12-01 16:30:20.711 WRN] [Cognite.Extractor.Metrics.MetricsService] Metrics disabled: metrics configuration missing
+[2023-12-01 16:30:21.004 DBG] [Cognite.OpcUa.UAExtractor] Config:
+source:
+    config-root: /config
+    endpoint-url: opc.tcp://emerson-nodered:4840/
+logger:
+    console:
+        level: debug
+    file:
+        path: logs/cdf.log
+        level: verbose
+cognite:
+    data-set:
+        external-id: opcua_test_data_set
+    metadata-targets:
+        clean:
+            timeseries: true
+    project: celanese-dev
+    host: https://az-eastus-1.cognitedata.com
+influx:
+    host: http://emerson-influxdb:8086
+    username: admin
+    database: data
+extraction:
+    id-prefix: 'gp:'
+failure-buffer:
+    enabled: true
+    influx: true
+version: 1
+
+[2023-12-01 16:30:21.009 INF] [Cognite.OpcUa.UAExtractor] Building extractor with 2 pushers
+[2023-12-01 16:30:21.029 INF] [Cognite.OpcUa.UAExtractor] Starting OPC UA Extractor version 2.21.0
+[2023-12-01 16:30:21.029 INF] [Cognite.OpcUa.UAExtractor] Revision information: 2.21.0 2023-07-28 09:17:27 +0200
+[2023-12-01 16:30:21.034 WRN] [Cognite.Extractor.Utils.BaseExtractor] Add manager config to add high availability.
+[2023-12-01 16:30:21.034 INF] [Cognite.OpcUa.UAExtractor] Start UAClient
+[2023-12-01 16:30:21.041 INF] [Cognite.OpcUa.UAClient] Load OPC-UA Configuration from /config/opc.ua.net.extractor.Config.xml
+[2023-12-01 16:30:21.531 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:30:21.846 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:30:21.846 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:30:21.847 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:02"
+[2023-12-01 16:30:23.849 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:30:23.852 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:30:23.852 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:30:23.852 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:04"
+[2023-12-01 16:30:27.853 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:30:27.855 ERR] [Cognite.OpcUa.UAClient] Unable to connect to discovery server: BadNotConnected at operation SelectEndpoint. Message: Error establishing a connection: BadNotConnected.
+[2023-12-01 16:30:27.855 ERR] [Cognite.OpcUa.UAClient] Check the EndpointURL, and make sure that the server is accessible
+[2023-12-01 16:30:27.855 WRN] [Cognite.OpcUa.UAClient] Failed to connect, retrying in "00:00:08"
+[2023-12-01 16:30:35.859 INF] [Cognite.OpcUa.UAClient] Attempt to select endpoint from: "opc.tcp://emerson-nodered:4840/"
+[2023-12-01 16:30:35.922 INF] [Cognite.OpcUa.UAClient] Attempt to connect to endpoint at opc.tcp://emerson-nodered:4840/ with security: http://opcfoundation.org/UA/SecurityPolicy#None using user identity Anonymous
+[2023-12-01 16:30:36.157 INF] [Cognite.OpcUa.UAClient] Successfully connected to server
+[2023-12-01 16:30:36.171 INF] [Cognite.OpcUa.UAClient] Successfully connected to server at opc.tcp://emerson-nodered:4840/
+[2023-12-01 16:30:36.181 INF] [Cognite.OpcUa.ServerInfoHelper] Reading values from server configuration to determine upper limits
+[2023-12-01 16:30:36.188 VRB] [Cognite.OpcUa.UAClient] Run task read for  attempt 1/5. Elapsed: "00:00:00.0000007"
+[2023-12-01 16:30:36.202 DBG] [Cognite.OpcUa.UAClient] Read 7 / 7 attributes
+[2023-12-01 16:30:36.202 INF] [Cognite.OpcUa.UAClient] Read 7 attributes with 1 operations for 7 nodes
+[2023-12-01 16:30:36.209 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on browse node parallelism by the server, the extractor will continue with 0
+[2023-12-01 16:30:36.209 WRN] [Cognite.OpcUa.ServerInfoHelper] No upper limit is set on history node parallelism by the server, the extractor will continue with 0
+[2023-12-01 16:30:36.210 INF] [Cognite.OpcUa.ServerInfoHelper] Upper limit on browse nodes chunk is 2000, but configured to 1000
+[2023-12-01 16:30:36.210 INF] [Cognite.OpcUa.ServerInfoHelper] Max attribute read chunk is restricted to 1000
+[2023-12-01 16:30:36.213 INF] [Cognite.OpcUa.UAExtractor] Begin mapping main directory
+[2023-12-01 16:30:36.216 DBG] [Cognite.OpcUa.Browse.Browser] Browse node tree for nodes i=85
+[2023-12-01 16:30:36.220 VRB] [Cognite.OpcUa.UAClient] Run task read for  for root nodes attempt 1/5. Elapsed: "00:00:00.0000004"
+[2023-12-01 16:30:36.223 DBG] [Cognite.OpcUa.UAClient] Read 4 / 4 attributes for root nodes
+[2023-12-01 16:30:36.224 INF] [Cognite.OpcUa.UAClient] Read 4 attributes with 1 operations for 1 nodes for root nodes
+[2023-12-01 16:30:36.234 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Handle node Objects, i=85: "Object"
+[2023-12-01 16:30:36.244 INF] [Cognite.OpcUa.Browse.Browser] Begin browsing 1 nodes for the main instance hierarchy
+[2023-12-01 16:30:36.246 DBG] [Cognite.OpcUa.Browse.Browser] Browse node hierarchy for the main instance hierarchy for i=85
+[2023-12-01 16:30:36.259 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000011"
+[2023-12-01 16:30:36.263 VRB] [Cognite.OpcUa.UAClient] Run task browse attempt 1/5. Elapsed: "00:00:00.0000007"
+[2023-12-01 16:30:36.290 VRB] [Cognite.OpcUa.Browse.Browser] Read 2 children from node i=85 for the main instance hierarchy
+[2023-12-01 16:30:36.291 DBG] [Cognite.OpcUa.Browse.Browser] Browse node children for the main instance hierarchy: 0 pending, 1 total operations. 1/1
+[2023-12-01 16:30:36.296 INF] [Cognite.OpcUa.Browse.Browser] Browsed a total of 1 nodes in 1 operations, and found 1 nodes total for the main instance hierarchy
+[2023-12-01 16:30:36.296 DBG] [Cognite.OpcUa.Browse.Browser] Total results for the main instance hierarchy by depth:
+    0: 1
+
+[2023-12-01 16:30:36.306 VRB] [Cognite.OpcUa.UAClient] Run task read for  for node hierarchy information attempt 1/5. Elapsed: "00:00:00.0000002"
+[2023-12-01 16:30:36.308 DBG] [Cognite.OpcUa.UAClient] Read 1 / 1 attributes for node hierarchy information
+[2023-12-01 16:30:36.309 INF] [Cognite.OpcUa.UAClient] Read 1 attributes with 1 operations for 1 nodes for node hierarchy information
+[2023-12-01 16:30:36.309 INF] [Cognite.OpcUa.UAClient] Retrieved 1/1 core attributes for 1 nodes
+[2023-12-01 16:30:36.318 INF] [Cognite.OpcUa.TypeCollectors.TypeManager] Building type information from nodes in memory
+[2023-12-01 16:30:36.322 VRB] [Cognite.OpcUa.NodeSources.UANodeSource] Object: Objects
+    Id: i=85
+    ObjectType: 
+        Id: i=0
+
+[2023-12-01 16:30:36.325 INF] [Cognite.OpcUa.NodeSources.UANodeSource] Mapping resulted in 1 destination objects and 0 destination timeseries, 1 objects and 0 variables.
+[2023-12-01 16:30:36.325 INF] [Cognite.OpcUa.UAExtractor] End mapping main directory
+[2023-12-01 16:30:36.334 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.Pushers.CDFPusher
+[2023-12-01 16:30:36.336 INF] [Cognite.OpcUa.Pushers.CDFPusher] Testing 1 nodes against CDF
+[2023-12-01 16:30:36.470 INF] [Cognite.OpcUa.UAExtractor] Executing pushes on pusher Cognite.OpcUa.InfluxPusher
+[2023-12-01 16:30:36.476 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.InfluxPusher true
+[2023-12-01 16:30:36.476 INF] [Cognite.OpcUa.UAExtractor] Waiting for pushes on pushers
+[2023-12-01 16:30:37.332 DBG] [Cognite.Extensions.IAuthenticator] New OIDC token. Expires on 2023-12-01 17:30:36.321
+[2023-12-01 16:30:37.787 DBG] [CogniteSdk.Client] CDF (DataSets:retrieve): POST https://az-eastus-1.cognitedata.com/api/v1/projects/celanese-dev/datasets/byids - 406 ms
+[2023-12-01 16:30:37.802 INF] [Cognite.Extractor.Utils.CogniteDestination] Getting or creating 0 time series in CDF
+[2023-12-01 16:30:37.809 INF] [Cognite.OpcUa.Pushers.CDFPusher] Finish pushing nodes to CDF
+[2023-12-01 16:30:37.811 INF] [Cognite.OpcUa.UAExtractor] Successfully pushed nodes on pusher Cognite.OpcUa.Pushers.CDFPusher true
+[2023-12-01 16:30:37.813 INF] [Cognite.OpcUa.UAExtractor] Synchronize 0 nodes
