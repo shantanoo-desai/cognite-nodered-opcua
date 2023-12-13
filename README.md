@@ -5,12 +5,17 @@ as a Docker Compose application stack
 
 ## Scenario Reproduction
 
+> NOTE: in order to set a unique URN for OPC-UA Server in Node-RED one needs to export the 
+>       the system hostname into the current shell. This is achievable via:
+>         - `export HOSTNAME` or `HOST` depending on your system
+>         - or echo `export HOSTNAME" >> ~/.bashrc`
+
 1. Clone Repo using `git clone https://github.com/shantanoo-desai/cognite-nodered-opcua.git`
 2. Change into the directory `cd cognite-nodered-opcua`
 3. Bring the stack up using:
 
     ```
-     docker compose --project-directory stack up -d
+     export HOSTNAME && docker compose --project-directory stack up -d
     ```
 4. Head to `http://<ip-address>:4840` or `http://localhost:4840` in a browser to go to Node-RED editor
 5. Install the required nodes mentioned below using the __Palette Manager__ from the Node-RED editor
@@ -33,7 +38,7 @@ Docker Compose Version: 2.21.0
 Bring the stack up:
 
 ```bash
-docker compose --project-directory stack up -d
+export HOSTNAME && docker compose --project-directory stack up -d
 ```
 
 Bring stack down:

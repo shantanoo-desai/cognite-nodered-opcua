@@ -1,7 +1,9 @@
 services:
   cognite:
-    image: cognite/opcua-extractor-net:2.22.2
+    image: cognite/opcua-extractor-net:2.22.1
     container_name: cognite-cdf
+    environment:
+      - SYSTEM_HOSTNAME=${HOSTNAME} # change this to HOST if your machine has HOST as bash variable
     env_file:
       - ../cognite/.env
     restart: always
